@@ -1,0 +1,211 @@
+---
+title: 'AT Visualized'
+author: ''
+date: '2019-11-05'
+slug: at_visualized
+categories: []
+tags: []
+---
+
+In 2019, I hiked northbound on the Appalachian Trail, 2,192 from Georgia to Maine. It took 170 days. After I finished, I went through my journal and guidebook to create a spreadsheet with each day's mileage, location, sleep site, and other notes. 
+
+Below, I visualize my mileage and attempt to find trends. I also breakdown my sleep sites by type.
+
+<br>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE)
+```
+
+```{r}
+# Setup the data
+
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(stringr)
+
+df <- read_csv("~/Documents/Coding/AT_analysis/AT  - Mine.csv") %>%
+  filter(!is.na(date)) %>%
+  filter(!str_detect(date, "#")) %>%
+  mutate(mile = as.numeric(mile)) %>%
+  mutate(date = as.Date(date, "%m/%d/%y")) %>%
+  mutate(slept_outdoors = ifelse(
+     site_type == "Shelter" | 
+     site_type == "Yard" |
+     site_type == "Stealth" | 
+     site_type == "Paid Campsite"  |
+     site_type == "Campsite", 
+     "outdoors", "indoors"
+     ))
+
+# I'm gonna add which state everything was in
+df <- df %>% 
+  mutate(state = case_when(
+    mile < 78.1 ~ "GA",
+    mile >= 78.1   & mile < 174.5 ~ "NC",
+    mile >= 174.5  & mile < 466.8 ~ "NC/TN", # ignore the TN bit
+    mile >= 466.8  & mile < 1022.7 ~ "VA",   # ignore the VA/WV bit
+    mile >= 1022.7 & mile < 1025.5 ~ "WV",
+    mile >= 1025.5 & mile < 1066.4 ~ "MD",
+    mile >= 1066.4 & mile < 1295.6 ~ "PA",
+    mile >= 1295.6 & mile < 1367.8 ~ "NJ",   # ignore the NJ/NY bit
+    mile >= 1367.8 & mile < 1457.6 ~ "NY",
+    mile >= 1457.6 & mile < 1507.9 ~ "CT",
+    mile >= 1507.9 & mile < 1598.5 ~ "MA",
+    mile >= 1598.5 & mile < 1749.3 ~ "VT",
+    mile >= 1749.3 & mile < 1910.2 ~ "NH",
+    mile >= 1910.2 ~ "ME")
+    ) %>% 
+  mutate(state = factor(state, levels = c("GA", "NC", "NC/TN",    
+                                          "VA", "WV", "MD", "PA",
+                                          "NJ", "NY", "CT", "MA",
+                                          "VT", "NH", "ME"))) 
+  
+
+
+```
+
+
+```{r}
+# Time to graph!
+library(dplyr)
+
+miles_per_day <- df %>% 
+  ggplot(aes(x = date, y = mileage)) + 
+  geom_col(aes(fill = state)) +
+  labs(title = "Mileage per Day",
+       fill = "State") + 
+  ylab("Mileage") + 
+  xlab("Date")
+       
+
+miles_per_day
+```
+
+Clearly, my mileage was all over the place. I started out relatively strong. I began to really push my mileage in VA. My pace slowed a bit in PA, probably due to the rocks and heat. Between NJ and VT, I changed my hiking style, hiking fewer miles but more consistently. I slowed significantly in NH and southern ME because of the difficult terrain, and picked back up in the Hundred Mile Wilderness. 
+
+```{r}
+av_zeros <- df %>% 
+  summarize(average_mileage = mean(mileage)) %>%
+  select(average_mileage) %>%
+  round(digits = 2)
+
+av_nozeros <- df %>% 
+  filter(mileage > 0) %>%
+  summarize(average_mileage = mean(mileage)) %>%
+  select(average_mileage) %>%
+  round(digits = 2)
+```
+
+My average mileage was `r av_zeros` if I include zero days and `r av_nozeros` if I exclude them.
+
+My biggest day was 31 miles.
+
+
+```{r}
+# Find number of consistent days before taking a zero 
+
+# create dummy var for nonzero days
+df <- df %>%
+  mutate(consistent_nonzeros = case_when(mileage == 0 ~ 0,
+                                         mileage > 0 ~ 1))
+
+# alter var so that it counts consistent nonzero days 
+for (row in 2:nrow(df)) {
+  prev_day <- df[row-1, "consistent_nonzeros"] 
+  current_day <- df[row, "consistent_nonzeros"] 
+  if (prev_day > 0 & current_day > 0) {
+    df[row, "consistent_nonzeros"] <- df[row - 1, "consistent_nonzeros"] + 1
+  }
+} 
+
+# calculate the average consistency
+av_consis_nonzero <- df %>% 
+  filter(consistent_nonzeros > 0) %>%
+  summarise(average_consistency = mean(consistent_nonzeros)) %>%
+  round(digits = 2)
+  
+```
+
+I took a total of 19 zero days: 8 were on-trail (this includes days spent in trail towns), 8 were off-trail, and 3 were for Trail Days.
+
+The average number of days that I hiked before taking a zero day was `r av_consis_nonzero`.
+
+My longest stretch without taking a zero day was 24 days, between NJ and VT.
+
+
+<br>
+
+
+```{r}
+# Pie chart of sites
+library(plotly)
+
+# The following is an effort to reorde the donut site types (it's a bit manual, 
+# which I don't love, but it works)
+  donut_data <- df %>% 
+    group_by(site_type) %>% 
+    count() 
+  
+  # Create custom order
+  customOrder <- c(donut_data$site_type[c(10, 5, 6, 1, 4, 2, 3, 7:9)])
+
+  # Order data frame
+  donut_data <- donut_data %>% 
+    arrange(factor(site_type, levels = customOrder))
+  
+  
+# Create donut of sites
+donut <- donut_data %>% 
+  plot_ly(labels = ~site_type, 
+          values = ~n, 
+          marker = list(colors = c('#0ec3ff', #blue
+                                   '#f7b6a6', #orange
+                                   '#f7cea8',
+                                   '#e8b4a7',
+                                   '#fcd19f',
+                                   '#ffaea3',
+                                  # '#ffc8a3', 
+                                   '#c7dbfc', #blue
+                                   '#a5c4fa',
+                                   '#c2c6fc',
+                                   '#709ae0'
+                                   )),
+          sort = FALSE, 
+          showlegend = FALSE,
+          textinfo = "none") %>%
+  add_pie(hole = 0.6) 
+
+# Now build the inside pie chart: indoors or outdoors
+pie <-  df %>%
+  plot_ly(labels = ~slept_outdoors, 
+          type = 'pie',
+          showlegend = TRUE,
+          textinfo = "none") 
+
+pd <- subplot(pie, donut, margin = 0.05) %>%
+  layout(title = "Site Types (this is interactive, so hover around!)",
+         showlegend = TRUE,
+         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+         yaxis = list(showgrid = FALSE, zeroline = FALSE,  showticklabels = FALSE)
+         ) 
+         
+
+pd
+
+```
+
+The plurality win goes to shelters. I slept in or tented near shelters due to their amenities: large tenting space, a roof, privy, bear box. 
+
+I slept outdoors for only 67% of the nights. In retrospect, I didn't realize I had slept indoors so often, but it didn't feel more than other hikers...
+
+In terms of paid lodging, I spent 38 nights in either a hotel, hostel, Airbnb, or paid campsite. 7 of those hostels were donation-based barns or churchs. 3 of the paid campsites were for Trail Days. 
+
+
+
+```{r}
+# Model mileage vs day, max temp, and elevation gain
+
+# Find correlation between site type and mileage (or next day's mileage)
+```
