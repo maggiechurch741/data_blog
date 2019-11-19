@@ -6,8 +6,8 @@
 <meta name="generator" content="Hugo 0.59.1" />
 
 
-<title>AT Visualized - A Hugo website</title>
-<meta property="og:title" content="AT Visualized - A Hugo website">
+<title>Tidy Tuesday: Dual Axis Plots and Google Trends - A Hugo website</title>
+<meta property="og:title" content="Tidy Tuesday: Dual Axis Plots and Google Trends - A Hugo website">
 
 
   <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -19,6 +19,11 @@
 
 
 
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
 
 
 
@@ -57,10 +62,10 @@
 
   <article class="article">
     
-    <span class="article-duration">2 min read</span>
+    <span class="article-duration">5 min read</span>
     
 
-    <h1 class="article-title">AT Visualized</h1>
+    <h1 class="article-title">Tidy Tuesday: Dual Axis Plots and Google Trends</h1>
 
     
     <span class="article-date">2019-11-05</span>
@@ -68,32 +73,78 @@
 
     <div class="article-content">
       
-<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
-<script src="/rmarkdown-libs/plotly-binding/plotly.js"></script>
-<script src="/rmarkdown-libs/typedarray/typedarray.min.js"></script>
-<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
-<link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
-<link href="/rmarkdown-libs/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/plotly-main/plotly-latest.min.js"></script>
 
 
-<p>In 2019, I hiked northbound on the Appalachian Trail, 2,192 from Georgia to Maine. It took 170 days. After I finished, I went through my journal and guidebook to create a spreadsheet with each day’s mileage, location, sleep site, and other notes.</p>
-<p>Below, I visualize my mileage and attempt to find trends. I also breakdown my sleep sites by type.</p>
-<p><br></p>
-<p><img src="/AT_data_analysis_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>Clearly, my mileage was all over the place. I started out relatively strong. I began to really push my mileage in VA. My pace slowed a bit in PA, probably due to the rocks and heat. Between NJ and VT, I changed my hiking style, hiking fewer miles but more consistently. I slowed significantly in NH and southern ME because of the difficult terrain, and picked back up in the Hundred Mile Wilderness.</p>
-<p>My average mileage was 12.89 if I include zero days and 14.52 if I exclude them.</p>
-<p>My biggest day was 31 miles.</p>
-<p>I took a total of 19 zero days: 8 were on-trail (this includes days spent in trail towns), 8 were off-trail, and 3 were for Trail Days.</p>
-<p>The average number of days that I hiked before taking a zero day was 7.58.</p>
-<p>My longest stretch without taking a zero day was 24 days, between NJ and VT.</p>
-<p><br></p>
-<div id="htmlwidget-1" style="width:672px;height:480px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1">{"x":{"data":[{"labels":["outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","outdoors","outdoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","outdoors","outdoors","indoors","outdoors","outdoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","indoors","outdoors","indoors","outdoors","outdoors","outdoors","outdoors","indoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","outdoors","outdoors","indoors","indoors","indoors","indoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","indoors","indoors","indoors","outdoors","indoors","indoors","indoors","outdoors","outdoors","outdoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","outdoors","indoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","indoors","indoors","outdoors","outdoors","outdoors","indoors","indoors","outdoors","indoors","indoors","indoors","indoors","indoors","indoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","indoors","outdoors","outdoors","indoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors"],"showlegend":true,"textinfo":"none","type":"pie","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null},{"labels":["Yard","Hostel","Hotel","Airbnb","Home","AMC Hut","Campsite","Paid Campsite","Shelter","Stealth"],"values":[8,17,16,5,12,5,3,5,71,28],"marker":{"color":"rgba(255,127,14,1)","colors":["#0ec3ff","#f7b6a6","#f7cea8","#e8b4a7","#fcd19f","#ffaea3","#c7dbfc","#a5c4fa","#c2c6fc","#709ae0"],"line":{"color":"rgba(255,255,255,1)"}},"sort":false,"showlegend":false,"textinfo":"none","type":"pie","hole":0.6,"frame":null}],"layout":{"NA":{"anchor":[],"domain":[0,1]},"NA2":{"anchor":[],"domain":[0,1]},"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":true,"title":"Site Types (this is interactive, so hover around!)","xaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"yaxis":{"showgrid":false,"zeroline":false,"showticklabels":false}},"attrs":{"92c41eb17fdb":{"labels":{},"showlegend":true,"textinfo":"none","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"pie"},"92c42097143c":{"labels":{},"values":{},"marker":{"colors":["#0ec3ff","#f7b6a6","#f7cea8","#e8b4a7","#fcd19f","#ffaea3","#c7dbfc","#a5c4fa","#c2c6fc","#709ae0"]},"sort":false,"showlegend":false,"textinfo":"none","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"pie","hole":0.6,"inherit":true}},"source":"A","config":{"showSendToCloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"subplot":true,"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-<p>The plurality win goes to shelters. I slept in or tented near shelters due to their amenities: large tenting space, a roof, privy, bear box.</p>
-<p>I slept outdoors for only 67% of the nights. In retrospect, I didn’t realize I had slept indoors so often, but it didn’t feel more than other hikers…</p>
-<p>In terms of paid lodging, I spent 38 nights in either a hotel, hostel, Airbnb, or paid campsite. 7 of those hostels were donation-based barns or churchs. 3 of the paid campsites were for Trail Days.</p>
+<div id="visualizing-two-variables-of-interest" class="section level1">
+<h1>Visualizing Two Variables of Interest</h1>
+<div id="the-prompt" class="section level2">
+<h2>The Prompt</h2>
+<p>For my first #tidytuesday, I chose an old prompt. I wanted to explore USDA milk consumption data. The accompanying <a href="https://www.npr.org/2019/01/09/683339929/nobody-is-moving-our-cheese-american-surplus-reaches-record-high">NPR article</a> considers the oversupply of cheese in the US. Andrew Novakovic, an agricultural economist at Cornell University, explained that milk production has risen while consumption has fallen, so suppliers turn the milk into cheese which is less perishable. But Americans are turning to less processed/more expensive cheeses, and consuming cheese overall.</p>
+<p>Since I was late to this prompt, I was able to check out what others had already done with it. <a href="https://twitter.com/Alex_Danvers/status/1090496421160075264">@Alex_Danvers</a> compared milk production to google search trends for “lactose,” which I thought was interesting. I decided to do the same, but for milk <em>consumption</em>, which I thought was more relevant.</p>
+</div>
+<div id="the-data" class="section level2">
+<h2>The Data</h2>
+<p>The USDA dairy consumption data has yearly domestic consumption for milk, yogurt, butter, etc. in lbs per person, between 1975-2018. I’m just going to focus on milk.</p>
+<pre><code>## # A tibble: 6 x 8
+##    year  milk yogurt butter american_cheese other_cheese cottage_cheese
+##   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;           &lt;dbl&gt;        &lt;dbl&gt;          &lt;dbl&gt;
+## 1  1975   247   1.97   4.73            8.15         6.13           4.59
+## 2  1976   247   2.13   4.31            8.88         6.63           4.63
+## 3  1977   244   2.34   4.29            9.21         6.78           4.62
+## 4  1978   241   2.45   4.35            9.53         7.31           4.60
+## 5  1979   238   2.44   4.49            9.60         7.57           4.43
+## 6  1980   234   2.50   4.47            9.62         7.90           4.41
+## # ... with 1 more variable: ice_cream &lt;dbl&gt;</code></pre>
+<p>The Google Trends data is monthly, and unfortunately only goes back to 2004. Values represent search interest relative to the highest point on the chart for U.S. searches between 2004 and 2018. A value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular as when it peaked. In this data, the term peaked in July of 2018.</p>
+<pre><code>## # A tibble: 6 x 2
+##   Month   `lactose: (United States)`
+##   &lt;chr&gt;                        &lt;int&gt;
+## 1 2004-01                         42
+## 2 2004-02                         41
+## 3 2004-03                         51
+## 4 2004-04                         43
+## 5 2004-05                         42
+## 6 2004-06                         41</code></pre>
+<p>Since the USDA data is yearly, I find the yearly average of lactose trends and merge the datasets on year.</p>
+</div>
+</div>
+<div id="the-plot" class="section level1">
+<h1>The Plot</h1>
+<div id="dual-axis-plot" class="section level3">
+<h3>Dual Axis Plot</h3>
+<p>First, I plotted both of the variables I was interested in (milk consumption and google search trends) over time. Here’s the graph using raw data. We can see that there’s a spike in search popularity between 2010-2012 and 2014-2018, and a steep decrease in milk consumption between 2010-2014. These two variables definitely appear to be negatively correlated, and indeed their correlation coefficient is -0.98, but is this the best way to demonstrate their relationship?</p>
+<p><img src="/post/01-29-2019-USDA-post_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="side-by-side-plot" class="section level3">
+<h3>Side-by-Side Plot</h3>
+<p>My partner Andrew convinced me that dual axis plots are generally bad practice. Lisa Charlotte Ross <a href="https://blog.datawrapper.de/dualaxis/">wrote a great post</a> about why that is. Basically, they can be misleading about relationships.</p>
+<p>One of Lisa’s suggestions was to use side-by-side plots. This doesn’t really offer any more information, but it does keep the reader from making those subconscious false assumptions due to dual axes.</p>
+<p><img src="/post/01-29-2019-USDA-post_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="labeled-scatterplot" class="section level3">
+<h3>Labeled scatterplot</h3>
+<p>Another of Lisa’s suggestions was to create a Labeled scatterplot instead. This is nice because it shows us the relationship between our variables of interest, without excluding the year, which itself contains a lot of implicit info.</p>
+<p>Below, I see that there is a negative relationship between lactose search trends and milk consumption. We also see that lactose searches increase over time, and milk consumption decreases over time. However, I liked having year on the x-axis. I think it’s more intuitive, and I like seeing each variable’s slope over time.</p>
+<p><img src="/post/01-29-2019-USDA-post_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="indexed-plot-standardized" class="section level3">
+<h3>Indexed Plot (Standardized)</h3>
+<p>One last suggestion of Lisa’s was to make an indexed plot. That is, adjust the scales of our two data series and compare them on one common scale.</p>
+<p>I index first by standardizing. This is what <span class="citation">@Alex_Danvers</span> did in the first place. Here I’m essentially just rescaling the vertical axes into relative terms. Notice all that space between these two lines in the original graph? Well, now I can zoom in on the action. Yes, I lose the information that the absolute values tell us, but I’m more interested in the relative changes anyways.</p>
+<p>The y-axis here will be z-score. In case you forgot Stat 101, the z-score indicates how much a given value differs from the standard deviation. For example, I can see that in 2006, milk consumption was 1 standard deviation above the mean consumption between 2004-2018.</p>
+<p>Below, I can see the same trends that I saw in my first graph, but more clearly. There’s that spike in search popularity between 2010-2012 and 2014-2018, and that big fall in milk consumption between 2010-2014. As it should be, the correlation coefficient of milk consumption and lactose search popularity is the same as before, -0.98.</p>
+<p><img src="/post/01-29-2019-USDA-post_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Note that when <span class="citation">@Alex_Danvers</span> made this graph using milk <em>production</em> instead of consumption, he found a weaker relationship with lactose search popularity. This makes sense to me.</p>
+<p>To like this graph, you have to understand z-scores, which is a bit esoteric. But I do like the way it allows me to effectively compare the two series on a common scale</p>
+</div>
+<div id="indexed-plot-change" class="section level3">
+<h3>Indexed Plot (% Change)</h3>
+<p>Next, I index using percent changes instead. That works well here because both of my variables of interest have similar rates of change, so I can easily see what’s going on with each.</p>
+<p>Below, I can see that milk consumption declined in each year in our time period, and lactose searches increase for all but one year. When google searches for lactose experienced a big jump However, when “lactose” searches experienced another jump in 2017, this time milk consumption <em>doesn’t</em> fall hard. Thus, it doesn’t seem like the changes in lactose searches and the changes in milk consumption are very related. As it turns out, the correlation coefficient this time is -0.13.</p>
+<p><img src="/post/01-29-2019-USDA-post_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>I like this last plot the best, because it holds the most interesting story. While all of the other graphs showed that lactose searches go up during the same time that milk consumption goes down, this is the only graph that suggests the spikes aren’t necessarily related.</p>
+</div>
+</div>
 
     </div>
   </article>
@@ -116,6 +167,18 @@
 
     </div>
     
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
 
     
 
