@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.59.1" />
+
+
+<title>How to Understand Margin of Error in Polling - A Hugo website</title>
+<meta property="og:title" content="How to Understand Margin of Error in Polling - A Hugo website">
+
+
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/rstudio/blogdown">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/rstudio">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">4 min read</span>
+    
+
+    <h1 class="article-title">How to Understand Margin of Error in Polling</h1>
+
+    
+    <span class="article-date">0001-01-01</span>
+    
+
+    <div class="article-content">
+      
+
+
+<p>Recently, a friend of mine made the argument that reporters should always include the margin of error when citing polls. This led to a discussion about what the margin of error really is.</p>
+<div id="margin-of-error" class="section level2">
+<h2>Margin of Error</h2>
+<p>The goal of any poll is to use the information from a <em>subset</em> of voters to estimate the information of <em>all</em> voters. The goal is not to “predict” the future winner. The <strong>margin of error</strong> measures how confidence you are in your poll. The lower the margin, the more confident you can be that you accurately estimated the population.</p>
+<div id="the-formula" class="section level3">
+<h3>The Formula</h3>
+<p>Between October 25-30, 2019, <a href="https://www.nytimes.com/2019/11/01/us/politics/iowa-poll-warren-biden.html">the New York Times Upshot/Siena College</a> asked 439 Iowan, democratic, likely-caucus-participants: “Who is your first choice?” 22% responded that Elizabeth Warren was their first choice.</p>
+<p>Using a 95% confidence interval, the margin of error is: <span class="math display">\[ z * SE \]</span> <span class="math display">\[ = 1.96 * \sqrt{\frac{(.5)(.5)}{439}} \]</span> <span class="math display">\[ = 4.7\% \]</span></p>
+<p>Let me break that down.</p>
+<ul>
+<li><p>The sample proportion <code>p(1-p)</code> = (.5)(.5): Okay, yeah we know that Warren got 22% in this poll, but we are going to ignore that and assume that her support level is a toss-up. 50-50 odds represents the upper bound of uncertainty, and yields the <a href="https://abcnews.go.com/PollingUnit/sampling-error-means/story?id=5984818">maximum margin of error</a>. Basically, we use 50-50 to be conservative in our estimation.</p></li>
+<li><p>Number of respondents <code>n</code> = 439: This is the only thing pollsters have control over. The more respondents, the smaller our margin of error. The tricky thing with polling is that you want your sample to be demographically representative of the voting population. Also, you want to capture likely voters, because only about <a href="https://fivethirtyeight.com/features/no-voter-turnout-wasnt-way-down-from-2012/">60% of elegible voters</a> actually do so.</p></li>
+<li><p>Confidence level indicator <code>z</code> = 1.96: The standard is 95% confidence, so z = 1.96. That’s because, assuming a normal distribution, 95% of all possibilities are within 1.96 standard deviations of the mean. You could use a larger confidence level, say 99%, but then your margin of error will be larger.</p></li>
+</ul>
+<p></br></p>
+<p><img src="/post/moe_files/figure-html/unnamed-chunk-1-1.png" width="288" /></p>
+<p>So the interpretation of this poll is: “At least 95 out of 100 times, <span class="math inline">\(22 \% \pm 4.7\%\)</span> of Iowa’s caucus-going democrats’ will support Warren.” But keep in mind, 22% is still the most likely outcome, given our sample.</p>
+</div>
+<div id="how-to-report-the-horse-race" class="section level3">
+<h3>How to Report the Horse Race</h3>
+<p>Here are the full results of the poll:</p>
+<p><img src="/post/moe_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<ul>
+<li><p>“Warren is polling ahead of Klobuchar” is totally okay to say, without caveats. The margin of error might actually be <em>most</em> useful to bring up when the difference in two candidates’ support is <em>outside</em> their margins (greater than a 9.2-point lead, in this case), because that means the lead is probably not due to sampling error.</p></li>
+<li><p>“Warren and Biden are in a statistical tie,” meaning, her lead on him is less than 9.2 points. I think this take is an exaggeration. I don’t think it’s misleading for a journalist to note that Warren is still <em>probably</em> ahead of Biden. In fact, it’s good information! Sure, they’re in a statistical tie, but that’s at a 95% confidence level. What if we use a 70% confidence level? Then our margin of error would be:</p></li>
+</ul>
+<p><span class="math display">\[ 1.04 * \sqrt{\frac{(.5)(.5)}{439}} \]</span> <span class="math display">\[ = 2.5\% \]</span></p>
+<p><img src="/post/moe_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Cool, so Warren’s lead over Biden is significant with 70% confidence.</p>
+</div>
+</div>
+<div id="why-do-pollsters-get-different-numbers" class="section level2">
+<h2>Why do pollsters get different numbers?</h2>
+<p>If different poll are reporting different numbers, and the difference is greater than the sum of their respective margins of error, this difference is probably not due to chance. The difference is probably structural, and has to do with <em>who</em> they sampled. Here are some of the more consequential differences in polling methods:</p>
+<p><strong>Polling method.</strong> Pollsters select respondents by either:</p>
+<ol style="list-style-type: decimal">
+<li>calling a list of registered voters
+<ul>
+<li>pro: these are active voters</li>
+<li>con: ignores new voters, and those who didn’t give their phone number when registering</li>
+</ul></li>
+<li>random digit dialing (then only talk to those that say they’re registered voters)
+<ul>
+<li>pro: captures a larger universe</li>
+<li>con: relies on respondents to be truthful about their registration status</li>
+</ul></li>
+<li>using online polls
+<ul>
+<li>pro: cheaper! Phone response rates are <a href="https://www.pewresearch.org/fact-tank/2019/02/27/response-rates-in-telephone-surveys-have-resumed-their-decline/">pretty low these days</a> at 6%, which means more dialing and more money</li>
+<li>pro: respondents are more likely to be truthful online, but election polls probably don’t involve enough social pressure to make a difference</li>
+<li>con: <a href="https://www.nytimes.com/2019/07/02/upshot/online-polls-analyzing-reliability.html">inaccurate??</a></li>
+</ul></li>
+</ol>
+<p><strong>House effect.</strong> This is the systematic over-representation of Democratic or Republican respondents. <a href="https://fivethirtyeight.com/features/when-house-effects-become-bias/">Here are a couple of examples</a>:</p>
+<ul>
+<li>pollsters that only called landlines tended to lean Republican in the 2012 presidential race</li>
+<li>the USC senate and gubernatorial polls (correctly) leaned Democratic in 2010 because they used bilingual interviewers</li>
+</ul>
+<p><strong>Weights.</strong> The above problems can theoretically be corrected by applying demographic weights, but this requires making assumptions that could be faulty.</p>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

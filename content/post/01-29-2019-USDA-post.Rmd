@@ -1,8 +1,7 @@
 ---
-title: 'Tidy Tuesday: Dual Axis Plots and Google Trends'
+title: 'Tidy Tuesday: Avoiding Dual Axis Plots and Using Google Trends'
 author: ''
 date: '2019-11-05'
-slug: at_visualized
 categories: []
 tags: []
 ---

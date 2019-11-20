@@ -2,7 +2,6 @@
 title: 'AT Visualized'
 author: ''
 date: '2019-11-04'
-slug: at_visualized
 categories: []
 tags: []
 ---

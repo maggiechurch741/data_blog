@@ -1,0 +1,169 @@
+---
+title: 'What to Know About Margin of Error'
+author: ''
+date: '2019-11-19'
+categories: []
+tags: []
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE)
+
+library(ggplot2)
+library(scales)
+library(dplyr)
+library(ggthemes)
+my_theme <- theme_wsj(color = "gray") +
+                      theme(plot.title = element_text(size = 13))
+```
+
+Recently, a friend of mine, Daniel Stublen, made the argument that reporters should always include the margin of error when citing polls. This led to a discussion about what the margin of error really is. It was a good conversation, and I thought I'd share it with the world. 
+
+
+## Margin of Error
+
+The goal of any poll is to use the information from a *subset* of voters to estimate the information of *all* voters. The goal is not to "predict" the future winner. The **margin of error** measures how confidence you are in your poll. The lower the margin, the more confident you can be that you accurately estimated the population. 
+
+### The Formula
+
+Between October 25-30, 2019, the New York Times Upshot/Siena College asked 439 Iowan, democratic, likely-caucus-participants: "Who is your first choice?" 22% responded that Elizabeth Warren was their first choice.
+
+Using a 95% confidence interval, the margin of error is:
+$$ z * SE $$
+$$ = 1.96 * \sqrt{\frac{(.5)(.5)}{439}} $$
+$$ = 4.7\% $$
+
+Let me break that down. 
+
+* The sample proportion `p(1-p)` = (.5)(.5): Okay, yeah we know that Warren got 22% in this poll, but we are going to ignore that and assume that her support level is a toss-up. 50-50 odds represents the upper bound of uncertainty, and yields the [maximum margin of error](https://abcnews.go.com/PollingUnit/sampling-error-means/story?id=5984818). Basically, we use 50-50 to be conservative in our estimation.
+
+* Number of respondents `n` = 439: This is the only thing pollsters have control over. The more respondents, the smaller our margin of error. The tricky thing with polling is that you want your sample to be demographically representative of the voting population. Also, you want to capture likely voters, because only about [60% of elegible voters](https://fivethirtyeight.com/features/no-voter-turnout-wasnt-way-down-from-2012/) actually do so.
+
+* Confidence level indicator `z` = 1.96: The standard is 95% confidence, so z = 1.96. That's because, assuming a normal distribution, 95% of all possibilities are within 1.96 standard deviations of the mean. You could use a larger confidence level, say 99%, but then your margin of error will be larger.
+
+</br>
+
+```{r fig.height = 3, fig.width = 3}
+# Create a shaded probability curve for Warren's support
+ggplot(NULL, aes(c(-3,3))) +
+  geom_area(stat = "function", fun = dnorm, fill = "grey80", xlim = c(-3, -2)) +
+  geom_area(stat = "function", fun = dnorm, fill = "#00998a", xlim = c(-2, 2)) +
+  geom_area(stat = "function", fun = dnorm, fill = "grey80", xlim = c(2, 3)) +
+  labs(y = "Probability", x = "Support") + 
+ # scale_y_continuous(breaks = NULL) + 
+  annotate("text", x = 0, y = .2, size = 5, label = "95%") +
+  scale_x_continuous(
+    breaks = c(-1.96, 0, 1.96),
+    labels = c("17.3%", "22%", "26.7%")
+    ) +
+  labs(title = "Probability distribution of \n support for Warren") 
+
+```
+
+So the interpretation of this poll is: "At least 95 out of 100 times, $22 \% \pm 4.7\%$ of Iowa's caucus-going democrats' will support Warren." But keep in mind, 22% is still the most likely outcome, given our sample. 
+
+
+### How to Report the Horse Race
+
+Here are the full results of the poll:
+
+```{r}
+moe <- 0.047
+
+# Build a data frame out of our poll data
+support <- c(.22, .19, .18, .17, .04, .03, .03)
+candidate <- c("Warren", "Sanders", "Buttigieg",
+               "Biden", "Klobuchar", "Harris", "Yang")
+
+df <- data.frame(support, candidate) %>%
+  mutate(candidate = factor(candidate,
+                            levels = candidate,
+                            ordered = TRUE)) %>% 
+  mutate(min_support = pmax(0, support - moe)) %>%
+  mutate(max_support = support + moe)
+
+# Plot poll results!
+ggplot(data = df) +
+  geom_errorbar(aes(x = candidate,
+                    ymin = min_support,
+                    ymax = max_support),
+                width = .3) +
+  geom_point(aes(x = candidate, y = support)) + 
+  scale_y_continuous(labels = percent,
+                     limits = c(0, .3)) +
+  labs(y = "", x = "", title = "Estimate for single candidate  support (95% confidence)") + 
+  my_theme 
+```
+
+* "Warren is polling ahead of Klobuchar" is totally okay to say, without caveats. The margin of error might actually be *most* useful to bring up when the difference in two candidates' support is *outside* their margins (greater than a 9.2-point lead, in this case), because that means the lead is probably not due to sampling error. 
+
+* "Warren and Biden are in a statistical tie," meaning, her lead on him is less than 9.2 points. I think this take is an exaggeration. I don't think it's misleading for a journalist to note that Warren is still *probably* ahead of Biden. In fact, it's good information! Sure, they're in a statistical tie, but that's at a 95% confidence level. What if we use a 70% confidence level? Then our margin of error would be:
+
+$$ 1.04 * \sqrt{\frac{(.5)(.5)}{439}} $$
+$$ = 2.5\% $$ 
+
+```{r}
+moe <- 0.025
+
+# Readjust min and max support with different moe
+df <- df %>%
+  mutate(min_support = pmax(0, support - moe)) %>%
+  mutate(max_support = support + moe)
+
+# Plot poll results, with new moe
+ggplot(data = df) +
+  geom_errorbar(aes(x = candidate,
+                    ymin = min_support,
+                    ymax = max_support),
+                width = .3) +
+  geom_point(aes(x = candidate, y = support)) + 
+  scale_y_continuous(labels = percent,
+                     limits = c(0, .3)) +
+  labs(y = "", x = "", title = "Estimate for single candidate support (confidence = 70%)") + 
+  my_theme
+  
+```
+
+Cool, so Warren's lead over Biden is significant with 70% confidence.
+
+
+## Why do pollsters get different numbers?
+
+If different poll are reporting different numbers, and the difference is greater than the sum of their respective margins of error, this difference is probably not due to chance. The difference is probably structural, and has to do with *who* they sampled. Here are some of the more consequential differences in polling methods: 
+
+
+**Polling method.** Pollsters select respondents by either:
+
+1. calling a list of registered voters 
+    * pro: these are active voters
+    * con: ignores new voters, and those who didn't give their phone number when registering
+2. random digit dialing (then only talk to those that say they're registered voters)
+    * pro: captures a larger universe 
+    * con: relies on respondents to be truthful about their registration status
+3. using online polls
+    * pro: cheaper! Phone response rates are [pretty low these days](https://www.pewresearch.org/fact-tank/2019/02/27/response-rates-in-telephone-surveys-have-resumed-their-decline/) at 6%, which means more dialing and more money
+    * pro: respondents are more likely to be truthful online, but election polls probably don't involve enough social pressure to make a difference
+    * con: [inaccurate??](https://www.nytimes.com/2019/07/02/upshot/online-polls-analyzing-reliability.html)
+    
+**House effect.** This is the systematic over-representation of Democratic or Republican respondents. [Here are a couple of examples](https://fivethirtyeight.com/features/when-house-effects-become-bias/):
+
+* pollsters that only called landlines tended to lean Republican in the 2012 presidential race 
+* the USC senate and gubernatorial polls (correctly) leaned Democratic in 2010 because they used bilingual interviewers  
+    
+**Weights.** The above problems can theoretically be corrected by applying demographic weights, but this requires making assumptions that could be faulty.
+
+
+## The Verdict
+
+I agree with Daniel that it is wise for the media to mention margins of error, especially if the race is a close one. However, I don't think journalists should go overboard and call a race a tie when it's not. 
+
+The Times/Sienna College poll that I've been using throughout this post was used in a [Times piece](https://www.nytimes.com/2019/11/01/us/politics/iowa-poll-warren-biden.html) a couple of days after the poll was conducted. Here's how they visualized the results: 
+
+![](https://i.imgur.com/ppEyQ9m.jpg)
+
+This figure was one of the first things you see in this article. I think its format is the norm for poll visualizations: just percentages. I would prefer to see the type of graph that I created above: percentages *with* error bars. The margin of error isn't even mentioned until about halfway down the article, and even then, it's never interpreted. 
+
+![](https://i.imgur.com/xaTQN9m.jpg)
+
+I don't know the extent to which voters are mislead by an article like this, and I don't know the effect that misleading has. But the bottom line is: let's all be data literate around election time, and remember what the margin of error is!
+
