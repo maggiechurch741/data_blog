@@ -165,5 +165,5 @@ This figure was one of the first things you see in this article. I think its for
 
 ![](https://i.imgur.com/xaTQN9m.jpg)
 
-I don't know the extent to which voters are mislead by an article like this, and I don't know the effect that misleading has. But the bottom line is: let's all be data literate around election time, and remember what the margin of error is!
+I don't know the extent to which voters are mislead by an article like this, and I don't know the effect that misleading has. But the bottom line is: let's all be data literate around election time, and remember what the margin of error means!
 
