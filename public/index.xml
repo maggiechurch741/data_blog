@@ -22,11 +22,11 @@ Margin of Error The goal of any poll is to use the information from a subset of 
     </item>
     
     <item>
-      <title>Tidy Tuesday: Avoiding Dual Axis Plots and Using Google Trends</title>
-      <link>/2019/11/05/tidy-tuesday-avoiding-dual-axis-plots-and-using-google-trends/</link>
+      <title>Tidy Tuesday: Avoiding Dual Axis</title>
+      <link>/2019/11/05/tidy-tuesday-avoiding-dual-axis/</link>
       <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/11/05/tidy-tuesday-avoiding-dual-axis-plots-and-using-google-trends/</guid>
+      <guid>/2019/11/05/tidy-tuesday-avoiding-dual-axis/</guid>
       <description>Visualizing Two Variables of Interest The Prompt For my first #tidytuesday, I chose an old prompt. I wanted to explore USDA milk consumption data. The accompanying NPR article considers the oversupply of cheese in the US. Andrew Novakovic, an agricultural economist at Cornell University, explained that milk production has risen while consumption has fallen, so suppliers turn the milk into cheese which is less perishable. But Americans are turning to less processed/more expensive cheeses, and consuming cheese overall.</description>
     </item>
     

@@ -143,15 +143,15 @@ If different poll are reporting different numbers, and the difference is greater
 3. using online polls
     * pro: cheaper! Phone response rates are [pretty low these days](https://www.pewresearch.org/fact-tank/2019/02/27/response-rates-in-telephone-surveys-have-resumed-their-decline/) at 6%, which means more dialing and more money
     * pro: respondents are more likely to be truthful online, but election polls probably don't involve enough social pressure to make a difference
-    * con: [inaccurate??](https://www.nytimes.com/2019/07/02/upshot/online-polls-analyzing-reliability.html)
+    * con: [inaccurate??](https://www.nytimes.com/2019/07/02/upshot/online-polls-analyzing-reliability.html) Beware of opt-in online polls...
     
-**House effect.** This is the systematic over-representation of Democratic or Republican respondents. [Here are a couple of examples](https://fivethirtyeight.com/features/when-house-effects-become-bias/):
+**House effect.** This is the systematic over-representation of Democratic or Republican respondents. Here are a couple of examples:
 
-* pollsters that only called landlines tended to lean Republican in the 2012 presidential race 
-* the USC senate and gubernatorial polls (correctly) leaned Democratic in 2010 because they used bilingual interviewers  
+* The USC/L.A. Times polls for state races leaned democrat in 2010 because they used [bilingual interviewers](https://fivethirtyeight.com/features/when-house-effects-become-bias/)  
+
+* Many polls over-estimated Clinton's support in 2016 because college graduates, who by 2016 were generally left of the aisle, are [more likely to take surveys](https://www.aapor.org/Education-Resources/Reports/An-Evaluation-of-2016-Election-Polls-in-the-U-S.aspx)
     
 **Weights.** The above problems can theoretically be corrected by applying demographic weights, but this requires making assumptions that could be faulty.
-
 
 ## The Verdict
 
@@ -165,5 +165,6 @@ This figure was one of the first things you see in this article. I think its for
 
 ![](https://i.imgur.com/xaTQN9m.jpg)
 
-I don't know the extent to which voters are mislead by an article like this, and I don't know the effect that misleading has. But the bottom line is: let's all be data literate around election time, and remember what the margin of error means!
+I don't know the extent to which voters are mislead by an article like this, and I don't know the extent to which polls effect voting behavior. Well, I do know that there can be a [bandwagon effect](http://researchdmr.com/Why_Are_Polls_Self_Fulfilling_Prophecies) that makes poll results self-fulfilling prophecies. Anyways, the bottom line is: let's all be data literate around election time, and remember what the margin of error means!
+
 
