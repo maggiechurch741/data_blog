@@ -1,16 +1,23 @@
+---
+title: 'Comparing 2020 Campaign Staff Online Presence'
+author: ''
+date: '2019-11-22'
+categories: []
+tags: []
+---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE)
-```
 
-```{r}
 library(tidytext)
 library(dplyr)
 library(ggplot2)
 library(stringr)
 library(rtweet)
 library(readr)
+```
 
+```{r}
 # Setup twitter access
 appname <- "staffscrape"
 key <- "RTiH1TQcJLP4O8cYjlRuwZKe4"
