@@ -24,7 +24,7 @@ library(dplyr)
 library(ggplot2)
 library(stringr)
 
-df <- read_csv("~/Documents/Coding/AT_analysis/AT  - Mine.csv") %>%
+df <- read_csv("~/Documents/Coding/data_blog/data/AT  - Mine.csv") %>%
   filter(!is.na(date)) %>%
   filter(!str_detect(date, "#")) %>%
   mutate(mile = as.numeric(mile)) %>%
