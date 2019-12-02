@@ -1,5 +1,5 @@
 ---
-title: 'Tidy Tuesday: Avoiding Dual Axis'
+title: 'Tidy Tuesday: Avoiding Dual Axis Plots'
 author: ''
 date: '2019-11-05'
 categories: []
