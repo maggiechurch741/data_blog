@@ -9,7 +9,6 @@ tags: []
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE)
 
-library(tidytext)
 library(dplyr)
 library(ggplot2)
 library(stringr)
@@ -112,50 +111,4 @@ Booker's team, on the other hand, was pretty active on Twitter that day. But des
 Sanders experience the opposite: low-activity but high visibility.
 
 Harris's team's Twitter game was strongest, as was her traction. 
-
-```{r, eval = F}
-sentiments <- get_sentiments("bing")
-
-
-library(janeaustenr)
-library(dplyr)
-library(stringr)
-
-tidy_text <- df %>%
-  group_by(text) %>%
-  unnest_tokens(word, text) 
-
-sent_df <- left_join(tidy_text, sentiments, by = "word") %>%
-  filter(!is.na(sentiment)) %>%
-  filter(word != "hard") %>% #not always bad
-  filter(word != "trump") %>% #not good
-  filter(word != "stutter") %>% #it's personal
-  filter(word != "prosecute") %>% # context
-  filter(word != "criminal") %>% #not bad
-  filter(word != "right") %>% #so vague
-  filter(word != "pretty") %>% #so vague
-  filter(word != "hang") %>% #vague
-  filter(word != "top") %>% #vague
-  filter(word != "like") %>% #vague
-  filter(word != "issues") %>% #not bad
-  filter(word != "undercuts") %>% #context
-  filter(word != "thank") %>%
-  filter(word != "rich") %>%
-  filter(word != "good") %>%
-  filter(word != "consistently") %>%
-  filter(word != "welcome") %>%
-  filter(word != "clear") %>%
-  filter(word != "led") %>%
-  filter(word != "holy") %>%
-  filter(word != "assault") #context
-
-sent_count_df <- sent_df %>%
-  mutate(sent_score = ifelse(sentiment == "positive", 1, -1)) %>%
-  group_by(tweet_id) %>%
-  summarise(sent_score = sum(sent_score))
-
-df <- left_join(df, sent_count_df, by = "tweet_id") 
-
-
-```
 
