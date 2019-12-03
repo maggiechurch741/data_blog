@@ -1,0 +1,227 @@
+---
+title: 'Tidy Tuesday: Avoiding Dual Axis Plots'
+author: ''
+date: '2019-11-05'
+categories: []
+tags: []
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE)
+```
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(magrittr)
+library(stringr)
+library(ggplot2)
+library(zoo)
+library(readxl)
+library(readr)
+library(scales)
+library(gridExtra)
+```
+
+# Visualizing Two Variables of Interest
+
+## The Prompt
+
+For my first #tidytuesday, I chose an old prompt. I wanted to explore USDA milk consumption data. The accompanying [NPR article](https://www.npr.org/2019/01/09/683339929/nobody-is-moving-our-cheese-american-surplus-reaches-record-high) considers the oversupply of cheese in the US. Andrew Novakovic, an agricultural economist at Cornell University, explained that milk production has risen while consumption has fallen, so suppliers turn the milk into cheese which is less perishable. But Americans are turning to less processed/more expensive cheeses, and consuming cheese overall.
+
+Since I was late to this prompt, I was able to check out what others had already done with it. [\@Alex_Danvers](https://twitter.com/Alex_Danvers/status/1090496421160075264) compared milk production to google search trends for "lactose," which I thought was interesting. I decided to do the same, but for milk *consumption*, which I thought was more relevant. 
+
+## The Data
+
+The USDA dairy consumption data has yearly domestic consumption for milk, yogurt, butter, etc. in lbs per person, between 1975-2018. I'm just going to focus on milk.
+```{r}
+dairy <- read_csv("dairy_consumption.csv",
+                 col_names = FALSE
+                  ) %>%
+  as_tibble(.name_repair = 'universal') %>%
+  select(c(1:7,13)) %>%
+  set_colnames(c("year", "milk", "yogurt", "butter", "american_cheese", 
+                 "other_cheese", "cottage_cheese", "ice_cream")) %>%
+  filter(!is.na(year)) %>%
+  mutate(year = as.numeric(year)) %>%
+  head(-6) 
+
+head(dairy)
+```
+
+The Google Trends data is monthly, and unfortunately only goes back to 2004. Values represent search interest relative to the highest point on the chart for U.S. searches between 2004 and 2018. A value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular as when it peaked. In this data, the term peaked in July of 2018.
+```{r}
+trends <- read_csv("lactose_trend.csv",
+               skip = 2) 
+
+head(trends)
+```
+
+Since the USDA data is yearly, I find the yearly average of lactose trends and merge the datasets on year.
+```{r}
+# Compute yearly search trends
+trends <- trends %>%  
+  mutate(year = as.numeric(substr(Month, 1, 4))) %>%
+  group_by(year) %>%
+  summarize(mean_search = mean(`lactose: (United States)`))
+
+# Merge datasets
+df <- inner_join(dairy, trends, by = 'year') 
+```
+
+# The Plot
+
+### Dual Axis Plot
+
+First, I plotted both of the variables I was interested in (milk consumption and google search trends) over time. Here's the graph using raw data. We can see that there's a spike in search popularity between 2010-2012 and 2014-2018, and a steep decrease in milk consumption between 2010-2014. These two variables definitely appear to be negatively correlated, and indeed their correlation coefficient is -0.98, but is this the best way to demonstrate their relationship?
+
+```{r}
+dual_plot <- df %>%
+  ggplot(aes(x = year)) +
+  geom_line(aes(y = milk, color = "milk consumption", group = 1)) +
+  geom_point(aes(y = milk, color = "milk consumption")) +
+  geom_line(aes(y = mean_search, color = "lactose search trend", group = 1)) +
+  geom_point(aes(y = mean_search, color = "lactose search trend")) + 
+  scale_y_continuous(sec.axis = sec_axis(~. , name = "\"Lactose\" Search Popularity")) +
+  scale_color_manual(values = c("red", "blue")) +
+  scale_x_continuous(breaks = seq(from = 2004, to = 2018, by = 2)) +
+  labs(y = "U.S. Milk Consumption (lbs per capita)",
+       x = "Year",
+       title = "Milk Consumption and \"Lactose\" Google Search Popularity Over Time") 
+
+dual_plot
+```
+
+### Side-by-Side Plot
+
+My partner Andrew convinced me that dual axis plots are generally bad practice. Lisa Charlotte Ross [wrote a great post](https://blog.datawrapper.de/dualaxis/) about why that is. Basically, they can be misleading about relationships.
+
+One of Lisa's suggestions was to use side-by-side plots. This doesn't really offer any more information, but it does keep the reader from making those subconscious false assumptions due to  dual axes. 
+
+```{r}
+max_milk <- max(df$milk)
+
+milk_plot <- df %>%
+  ggplot(aes(x = year, y = milk)) +
+  geom_line(color = "blue") + 
+  geom_point(color = "blue") +
+  scale_x_continuous(breaks = seq(from = 2004, to = 2018, by = 2)) +
+    labs(y = "U.S. Milk Consumption (lbs per capita)",
+         x = "",
+         title = "Milk Consumption and \"Lactose\" Google Search Popularity Over Time") 
+  
+trend_plot <- df %>%
+  ggplot(aes(x = year, y = mean_search)) +
+  geom_line(color = "red") + 
+  geom_point(color = "red") +
+  scale_x_continuous(breaks = seq(from = 2004, to = 2018, by = 2)) + 
+  labs(y = "\"Lactose\" Search Popularity",
+       x = "Year") 
+
+grid.arrange(milk_plot, trend_plot, nrow = 2)
+
+```
+
+### Labeled scatterplot
+
+Another of Lisa's suggestions was to create a Labeled scatterplot instead. This is nice because it shows us the relationship between our variables of interest, without excluding the year, which itself contains a lot of implicit info. 
+
+Below, I see that there is a negative relationship between lactose search trends and milk consumption. We also see that lactose searches increase over time, and milk consumption decreases over time. However, I liked having year on the x-axis. I think it's more intuitive, and I like seeing each variable's slope over time.
+
+```{r}
+scatter_plot <- df %>%
+  ggplot(aes(x = mean_search, y = milk)) +
+  geom_line() +
+  geom_point() +
+  geom_text(aes(label = year, hjust = -.2, vjust = -.2)) + 
+  labs(x = "\"Lactose\" Search Popularity",
+       y = "Milk Consumption (lbs per capita)",
+       title = "\"Lactose\" Google Search Popularity vs Milk Consumption") 
+
+scatter_plot
+```
+
+
+### Indexed Plot (Standardized)
+
+One last suggestion of Lisa's was to make an indexed plot. That is, adjust the scales of our two data series and compare them on one common scale.
+
+I index first by standardizing. This is what @Alex_Danvers did in the first place. Here I'm essentially just rescaling the vertical axes into relative terms. Notice all that space between these two lines in the original graph? Well, now I can zoom in on the action.  Yes, I lose the information that the absolute values tell us, but I'm more interested in the relative changes anyways. 
+
+The y-axis here will be z-score. In case you forgot Stat 101, the z-score indicates how much a given value differs from the standard deviation. For example, I can see that in 2006, milk consumption was 1 standard deviation above the mean consumption between 2004-2018.
+
+Below, I can see the same trends that I saw in my first graph, but more clearly. There's that spike in search popularity between 2010-2012 and 2014-2018, and that big fall in milk consumption between 2010-2014. As it should be, the correlation coefficient of milk consumption and lactose search popularity is the same as before, -0.98.
+
+```{r}
+df <- df %>%
+  mutate(norm_mean_search = scale(mean_search),
+         norm_milk = scale(milk))
+
+norm_indexed_plot <- df %>%
+  ggplot(aes(x = year)) +
+  geom_line(aes(y = norm_milk, 
+                color = "Milk Consumption", 
+                group = 1)) +
+  geom_point(aes(y = norm_milk,
+                 color = "Milk Consumption")) +
+  geom_line(aes(y = norm_mean_search, 
+                color = "\"Lactose\" Search Popularity", 
+                group = 1)) +
+  geom_point(aes(y = norm_mean_search, 
+                 color = "\"Lactose\" Search Popularity")) +
+  scale_color_manual(values = c("red", "blue")) +
+  scale_x_continuous(breaks = seq(from = 2004, to = 2018, by = 2)) +
+  labs(y = "Z-score",
+       x = "Year",
+       color = "",
+       title = "Relative Change in \"Lactose\" Google Search Popularity and Milk Consumption")
+
+norm_indexed_plot
+```
+
+Note that when @Alex_Danvers made this graph using milk *production* instead of consumption, he found a weaker relationship with lactose search popularity. This makes sense to me. 
+
+To like this graph, you have to understand z-scores, which is a bit esoteric. But I do like the way it allows me to effectively compare the two series on a common scale
+
+### Indexed Plot (% Change)
+
+Next, I index using percent changes instead. That works well here because both of my variables of interest have similar rates of change, so I can easily see what's going on with each. 
+
+Below, I can see that milk consumption declined in each year in our time period, and lactose searches increase for all but one year. When google searches for lactose experienced a big jump  However, when "lactose" searches experienced another jump in 2017, this time milk consumption *doesn't* fall hard. Thus, it doesn't seem like the changes in lactose searches and the changes in milk consumption are very related. As it turns out, the correlation coefficient this time is -0.13. 
+
+```{r}
+df <- df %>%
+  mutate(ch_mean_search = mean_search/lag(mean_search, 1) - 1,
+         ch_milk = milk/lag(milk, 1) - 1)
+         
+ch_indexed_plot <- df %>%
+  ggplot(aes(x = year)) +
+  geom_line(aes(y = ch_milk, 
+                color = "Milk Consumption", 
+                group = 1)) +
+  geom_point(aes(y = ch_milk,
+                 color = "Milk Consumption")) +
+  geom_line(aes(y = ch_mean_search, 
+                color = "\"Lactose\" Search Popularity", 
+                group = 1)) +
+  geom_point(aes(y = ch_mean_search, 
+                 color = "\"Lactose\" Search Popularity")) +
+  geom_hline(yintercept = 0, linetype="dashed") +
+  scale_color_manual(values = c("red", "blue")) +
+  scale_y_continuous(labels = percent) +
+  scale_x_continuous(breaks = seq(from = 2004, to = 2018, by = 2)) +
+  labs(y = "Percent Change",
+       x = "Year",
+       color = "",
+       title = "% Change in \"Lactose\" Google Search Popularity and Milk Consumption")
+
+ch_indexed_plot
+```
+```{r, eval = F}
+cor.test(df$norm_milk, df$norm_mean_search, 
+         use="pairwise.complete.obs",
+         method="pearson")
+```
+
+I like this last plot the best, because it holds the most interesting story. While all of the other graphs showed that lactose searches go up during the same time that milk consumption goes down, this is the only graph that suggests the spikes aren't necessarily related.
+

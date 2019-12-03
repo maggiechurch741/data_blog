@@ -1,0 +1,161 @@
+---
+title: 'Comparing 2020 Campaign Staff Online Presence'
+author: ''
+date: '2019-11-22'
+categories: []
+tags: []
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE)
+
+library(tidytext)
+library(dplyr)
+library(ggplot2)
+library(stringr)
+library(rtweet)
+library(readr)
+```
+
+```{r}
+# Setup twitter access
+appname <- "staffscrape"
+key <- "RTiH1TQcJLP4O8cYjlRuwZKe4"
+secret <- "9vgduSJISaYTQ23IdVgkPVh9wVmAzW3leqSjKAco73q1gfK7Yg"
+access_token <- "1197145858829099008-Nnw1OqbF1ZfCvW08fUtQtditmTWaTI"
+access_secret <- "JnIeiD5RHrSnVSq8JRJpK5PMF6qGFN1S8LSZkuUUgRXoM"
+
+twitter_token <- create_token(
+  app = appname,
+  consumer_key = key,
+  consumer_secret = secret,
+  access_token = access_token,
+  access_secret = access_secret)
+```
+
+I'll limit this analysis to the tweets sent out by communications and press staff for candidates who particpated in yesterday's debate, and to the tweets sent out on debate day (Nov 21, 2019).
+
+```{r}
+# Pull our handles
+full <- read_csv("full_staffers.csv") %>%
+  mutate(Handle = str_replace_all(Handle, "@", "")) %>%
+  filter(Handle != "N/A")
+         
+comms <- read_csv("comms_staffers.csv") %>%
+  mutate(Handle = str_replace_all(Handle, "@", "")) %>%
+  filter(Handle != "N/A")
+```
+
+[This](https://ballotpedia.org/Presidential_election_key_staffers,_2020) is the list I used to get staffers' Twitter handles. All of our candidates have two communications/press staffers, except Booker who has three, and Biden who has four. 
+
+Yang and Gabbard actually each have one comms staffer, but Yang's hasn't tweeted since June, and Gabbard's hasn't tweeted since August. So they don't show up for the rest of my analysis.
+
+```{r, eval = F}
+# I suppose you can only pull tweets from the past week :( I should have cached this chunk, and/or saved the df. I saved the image from the last time I ran this. So that's all I can use, for now. But below is how I made it:
+
+# Get all original tweets from debate day, 11/21/2019
+tweets <- get_timeline(user = comms$Handle, 
+                       n = 1000) %>%
+  mutate(date = substr(as.character(created_at), 1, 10)) %>%
+  filter(date == "2019-11-21") %>%
+  select(c(screen_name, 
+           text, 
+           is_quote, 
+           is_retweet,
+           favorite_count,
+           retweet_count)) %>%
+   mutate(tweet_id = 1:nrow(df)) 
+
+# Merge back with comms df to find corresponding candidate
+df <- inner_join(comms, tweets, by = c("Handle" = "screen_name"))
+
+# New df with 1)candidate name 2)#tweets 3)#favorited 4)#retweeted
+summdf <- df %>% 
+  group_by(Candidate) %>%
+  summarize(tweets = n(),
+            favorited = sum(favorite_count),
+            retweeted = sum(retweet_count))
+
+# Time 2 plot
+plot_tweets <- summdf %>% 
+  ggplot(aes(x = Candidate)) +
+  geom_bar(aes(y = tweets), stat = "identity") +
+  labs(y = "# tweets",
+       x = "")
+
+plot_retweets <- summdf %>%
+  ggplot(aes(x = Candidate)) +
+  geom_bar(aes(y = retweeted), stat = "identity")  + 
+  labs(y = "# retweets",
+       x = "")
+
+plot_favs <- summdf %>%
+  ggplot(aes(x = Candidate)) +
+  geom_bar(aes(y = favorited), stat = "identity") + 
+  labs(y = "# favorites",
+       x = "")
+
+gridExtra::grid.arrange(plot_tweets, 
+                        plot_retweets,
+                        plot_favs,
+                        nrow = 3)
+
+```
+
+![](https://i.imgur.com/Cwdd2Tn.png)
+
+
+Apparently, Biden's team of four couldn't keep up with any of the others. The 53 tweets his team did get out on debate day didn't manage to gain much traction. Klobuchar and Warren's situations were similar.
+
+Booker's team, on the other hand, was pretty active on Twitter that day. But despite the volume, they didn't gain much traction either. 
+
+Sanders experience the opposite: low-activity but high visibility.
+
+Harris's team's Twitter game was strongest, as was her traction. 
+
+```{r, eval = F}
+sentiments <- get_sentiments("bing")
+
+
+library(janeaustenr)
+library(dplyr)
+library(stringr)
+
+tidy_text <- df %>%
+  group_by(text) %>%
+  unnest_tokens(word, text) 
+
+sent_df <- left_join(tidy_text, sentiments, by = "word") %>%
+  filter(!is.na(sentiment)) %>%
+  filter(word != "hard") %>% #not always bad
+  filter(word != "trump") %>% #not good
+  filter(word != "stutter") %>% #it's personal
+  filter(word != "prosecute") %>% # context
+  filter(word != "criminal") %>% #not bad
+  filter(word != "right") %>% #so vague
+  filter(word != "pretty") %>% #so vague
+  filter(word != "hang") %>% #vague
+  filter(word != "top") %>% #vague
+  filter(word != "like") %>% #vague
+  filter(word != "issues") %>% #not bad
+  filter(word != "undercuts") %>% #context
+  filter(word != "thank") %>%
+  filter(word != "rich") %>%
+  filter(word != "good") %>%
+  filter(word != "consistently") %>%
+  filter(word != "welcome") %>%
+  filter(word != "clear") %>%
+  filter(word != "led") %>%
+  filter(word != "holy") %>%
+  filter(word != "assault") #context
+
+sent_count_df <- sent_df %>%
+  mutate(sent_score = ifelse(sentiment == "positive", 1, -1)) %>%
+  group_by(tweet_id) %>%
+  summarise(sent_score = sum(sent_score))
+
+df <- left_join(df, sent_count_df, by = "tweet_id") 
+
+
+```
+

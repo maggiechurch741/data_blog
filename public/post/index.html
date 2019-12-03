@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>A Hugo website</title>
+  <title>Liva | Personal blog template</title>
 
   <!-- mobile responsive meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A website built through Hugo and blogdown.">
-  
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="description" content="This is meta description">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Hugo 0.60.1" />
 
   <!-- plugins -->
+  
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="/plugins/venobox/venobox.css ">
   
 
   <!-- Main Stylesheet -->
   
-  <link rel="stylesheet" href="/scss/style.min.css" integrity="" media="screen">
+  <link rel="stylesheet" href="/scss/style.min.css" media="screen">
 
   <!--Favicon-->
   <link rel="shortcut icon" href="/images/favicon.png " type="image/x-icon">
   <link rel="icon" href="/images/favicon.png " type="image/x-icon">
 
-</head><body><!-- navigation -->
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
 <header class="navigation">
   <div class="container">
     
     <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom">
       <a class="navbar-brand mobile-view" href="/"><img class="img-fluid"
-          src="" alt="A Hugo website"></a>
+          src="/images/logo.png" alt="Liva | Personal blog template"></a>
       <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
         <i class="ti-menu h3"></i>
       </button>
@@ -36,37 +49,68 @@
         <div class="desktop-view">
           <ul class="navbar-nav mr-auto">
             
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="ti-facebook"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="ti-twitter-alt"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="ti-instagram"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="ti-github"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="ti-linkedin"></i></a>
+            </li>
+            
           </ul>
         </div>
 
         <a class="navbar-brand mx-auto desktop-view" href="/"><img class="img-fluid"
-            src="" alt="A Hugo website"></a>
+            src="/images/logo.png" alt="Liva | Personal blog template"></a>
 
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/"></a>
+            <a class="nav-link" href="/"> Home </a>
           </li>
           
           
           <li class="nav-item">
-            <a class="nav-link" href="/about/">About</a>
-          </li>
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/rstudio/blogdown">GitHub</a>
+            <a class="nav-link" href="/about/about">About</a>
           </li>
           
           
           
           <li class="nav-item">
-            <a class="nav-link" href="https://twitter.com/rstudio">Twitter</a>
+            <a class="nav-link" href="/blog">Post</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
           </li>
           
           
         </ul>
 
+        
+        <!-- search -->
+        <div class="search px-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
         
 
         
@@ -85,86 +129,80 @@
           
           
           <div class="col-md-6 mb-4">
-            <article class="card">
-              
-              <div class="card-body px-0">
-                
-                <a href="/2019/11/22/comparing-2020-campaign-staff-online-presence/" class="h5 d-block my-3">Comparing 2020 Campaign Staff Online Presence</a>
-                <div class="mb-3">
-                  <span>By </span>
-                  
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  <span>22 November 2019</span>
-                  
-                </div>
-                <p class="card-text">I’ll limit this analysis to the tweets sent out by communications and press staff for candidates who particpated in yesterday’s debate, and to the tweets sent out on debate day (Nov 21, 2019).
-This is the list I used to get staffers’ Twitter handles. All of our candidates have two communications/press staffers, except Booker who has three, and Biden who has four.
-Yang and Gabbard actually each have one comms staffer, but Yang’s hasn’t tweeted since June, and Gabbard’s hasn’t tweeted since August.</p>
-                <a href="/2019/11/22/comparing-2020-campaign-staff-online-presence/" class="btn btn-outline-primary">read more</a>
-              </div>
-            </article>
-          </div>
+    <article class="card">
+        
+        <div class="card-body px-0">
+        
+        <a href="/post/staff_tweets/" class="h5 d-block my-3">Comparing 2020 Campaign Staff Online Presence</a>
+        <div class="mb-3">
+            <span>By Themefisher</span>
+            
+            <span class="border-bottom border-primary px-2 mx-1"></span>
+            <span>22 November 2019</span>
+            
+        </div>
+        <p class="card-text">I’ll limit this analysis to the tweets sent out by communications and press staff for candidates who particpated in yesterday’s debate, and to the tweets sent out on debate day (Nov 21, 2019).</p>
+        <a href="/post/staff_tweets/" class="btn btn-outline-primary">read more</a>
+        </div>
+    </article>
+</div>
           
           <div class="col-md-6 mb-4">
-            <article class="card">
-              
-              <div class="card-body px-0">
-                
-                <a href="/2019/11/19/what-to-know-about-margin-of-error-for-2020/" class="h5 d-block my-3">What to Know About Margin of Error for 2020</a>
-                <div class="mb-3">
-                  <span>By </span>
-                  
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  <span>19 November 2019</span>
-                  
-                </div>
-                <p class="card-text">Recently, my friend Daniel Stublen made the argument that reporters should always include the margin of error when citing polls. This led to a discussion about what the margin of error really is. It was a good conversation, and I thought I’d share it with the world.
-Margin of Error The margin of error measures how confident you are that your poll accurately reflects the sentiments of all voters. The lower the margin, the more confident you can be that you accurately estimated the population.</p>
-                <a href="/2019/11/19/what-to-know-about-margin-of-error-for-2020/" class="btn btn-outline-primary">read more</a>
-              </div>
-            </article>
-          </div>
+    <article class="card">
+        
+        <div class="card-body px-0">
+        
+        <a href="/post/moe/" class="h5 d-block my-3">What to Know About Margin of Error for 2020</a>
+        <div class="mb-3">
+            <span>By Themefisher</span>
+            
+            <span class="border-bottom border-primary px-2 mx-1"></span>
+            <span>19 November 2019</span>
+            
+        </div>
+        <p class="card-text">Recently, my friend Daniel Stublen made the argument that reporters should always include the margin of error when citing polls.</p>
+        <a href="/post/moe/" class="btn btn-outline-primary">read more</a>
+        </div>
+    </article>
+</div>
           
           <div class="col-md-6 mb-4">
-            <article class="card">
-              
-              <div class="card-body px-0">
-                
-                <a href="/2019/11/05/tidy-tuesday-avoiding-dual-axis-plots/" class="h5 d-block my-3">Tidy Tuesday: Avoiding Dual Axis Plots</a>
-                <div class="mb-3">
-                  <span>By </span>
-                  
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  <span>05 November 2019</span>
-                  
-                </div>
-                <p class="card-text">Visualizing Two Variables of Interest The Prompt For my first #tidytuesday, I chose an old prompt. I wanted to explore USDA milk consumption data. The accompanying NPR article considers the oversupply of cheese in the US. Andrew Novakovic, an agricultural economist at Cornell University, explained that milk production has risen while consumption has fallen, so suppliers turn the milk into cheese which is less perishable. But Americans are turning to less processed/more expensive cheeses, and consuming cheese overall.</p>
-                <a href="/2019/11/05/tidy-tuesday-avoiding-dual-axis-plots/" class="btn btn-outline-primary">read more</a>
-              </div>
-            </article>
-          </div>
+    <article class="card">
+        
+        <div class="card-body px-0">
+        
+        <a href="/post/01-29-2019-usda-post/" class="h5 d-block my-3">Tidy Tuesday: Avoiding Dual Axis Plots</a>
+        <div class="mb-3">
+            <span>By Themefisher</span>
+            
+            <span class="border-bottom border-primary px-2 mx-1"></span>
+            <span>05 November 2019</span>
+            
+        </div>
+        <p class="card-text">Visualizing Two Variables of Interest The Prompt For my first #tidytuesday, I chose an old prompt.</p>
+        <a href="/post/01-29-2019-usda-post/" class="btn btn-outline-primary">read more</a>
+        </div>
+    </article>
+</div>
           
           <div class="col-md-6 mb-4">
-            <article class="card">
-              
-              <div class="card-body px-0">
-                
-                <a href="/2019/11/04/at-visualized/" class="h5 d-block my-3">AT Visualized</a>
-                <div class="mb-3">
-                  <span>By </span>
-                  
-                  <span class="border-bottom border-primary px-2 mx-1"></span>
-                  <span>04 November 2019</span>
-                  
-                </div>
-                <p class="card-text">In 2019, I hiked northbound on the Appalachian Trail, 2,192 from Georgia to Maine. It took 170 days. After I finished, I went through my journal and guidebook to create a spreadsheet with each day’s mileage, location, sleep site, and other notes.
-Below, I visualize my mileage and attempt to find trends. I also breakdown my sleep sites by type.
-
-Clearly, my mileage was all over the place.</p>
-                <a href="/2019/11/04/at-visualized/" class="btn btn-outline-primary">read more</a>
-              </div>
-            </article>
-          </div>
+    <article class="card">
+        
+        <div class="card-body px-0">
+        
+        <a href="/post/at_data_analysis/" class="h5 d-block my-3">AT Visualized</a>
+        <div class="mb-3">
+            <span>By Themefisher</span>
+            
+            <span class="border-bottom border-primary px-2 mx-1"></span>
+            <span>04 November 2019</span>
+            
+        </div>
+        <p class="card-text">In 2019, I hiked northbound on the Appalachian Trail, 2,192 from Georgia to Maine.</p>
+        <a href="/post/at_data_analysis/" class="btn btn-outline-primary">read more</a>
+        </div>
+    </article>
+</div>
           
         </div>
       </div>
@@ -187,6 +225,16 @@ Clearly, my mileage was all over the place.</p>
           <h4 class="widget-title">Social</h4>
           <ul class="list-inline social-links">
             
+            <li class="list-inline-item"><a href="#"><i class="ti-facebook"></i></a></li>
+            
+            <li class="list-inline-item"><a href="#"><i class="ti-twitter-alt"></i></a></li>
+            
+            <li class="list-inline-item"><a href="#"><i class="ti-instagram"></i></a></li>
+            
+            <li class="list-inline-item"><a href="#"><i class="ti-github"></i></a></li>
+            
+            <li class="list-inline-item"><a href="#"><i class="ti-linkedin"></i></a></li>
+            
           </ul>
         </div>
         
@@ -208,27 +256,57 @@ Clearly, my mileage was all over the place.</p>
 
 
 
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2>Join Our Newsletter</h2>
+        <p class="text-light px-md-5 py-4 border-left border-right border-primary">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero</p>
+        <form action="#" class="row justify-content-center">
+          <div class="input-group col-md-8">
+            <input type="text" class="form-control" placeholder="Your Email Address">
+            <div class="input-group-append">
+              <button class="input-group-text btn btn-primary">Subscribe</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <footer>
   <div class="container">
     <div class="row">
       <div class="col-12 text-center mb-5">
-        <a href="/"><img src="" alt="A Hugo website"></a>
+        <a href="/"><img src="/images/logo.png" alt="Liva | Personal blog template"></a>
       </div>
       <div class="col-lg-3 col-sm-6 mb-5">
         <h6 class="mb-4">Contact Me</h6>
         <ul class="list-unstyled">
-          <li class="mb-3"><a class="text-dark" href="tel:"><i
-                class="ti-mobile mr-3 text-primary"></i></a></li>
-          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i></li>
-          <li class="mb-3"><a class="text-dark" href="mailto:"><i
-                class="ti-email mr-3 text-primary"></i></a>
+          <li class="mb-3"><a class="text-dark" href="tel:0124857985320"><i
+                class="ti-mobile mr-3 text-primary"></i>0124857985320</a></li>
+          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Dhaka, Bangladedsh</li>
+          <li class="mb-3"><a class="text-dark" href="mailto:demo@email.com"><i
+                class="ti-email mr-3 text-primary"></i>demo@email.com</a>
           </li>
         </ul>
       </div>
       <div class="col-lg-3 col-sm-6 mb-5">
         <h6 class="mb-4">Social Contacts</h6>
         <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="#">facebook</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="#">twitter</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="#">instagram</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="#">github</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="#">linkedin</a></li>
           
         </ul>
       </div>
@@ -239,10 +317,16 @@ Clearly, my mileage was all over the place.</p>
         <h6 class="mb-4">Quick Links</h6>
         <ul class="list-unstyled">
           
+          <li class="mb-3"><a class="text-dark" href="/about/about">About</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="/blog">Post</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="/contact">Contact</a></li>
+          
         </ul>
       </div>
       <div class="col-12 border-top py-4 text-center">
-        
+        | @2019 <a href="https://themefisher.com">Themefisher</a> All Rights Reserved |
       </div>
     </div>
   </div>
@@ -253,6 +337,20 @@ Clearly, my mileage was all over the place.</p>
 </script>
 
 <!-- JS Plugins -->
+
+<script src="/plugins/jQuery/jquery.min.js"></script>
+
+<script src="/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="/plugins/slick/slick.min.js"></script>
+
+<script src="/plugins/venobox/venobox.min.js"></script>
+
+<script src="/plugins/search/fuse.min.js"></script>
+
+<script src="/plugins/search/mark.js"></script>
+
+<script src="/plugins/search/search.js"></script>
 
 <!-- Main Script -->
 
@@ -270,7 +368,7 @@ Clearly, my mileage was all over the place.</p>
     a.src = g;
     m.parentNode.insertBefore(a, m)
   })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', '', 'auto');
+  ga('create', 'Your ID', 'auto');
   ga('send', 'pageview');
 </script></body>
 </html>
