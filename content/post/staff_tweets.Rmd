@@ -37,11 +37,11 @@ I'll limit this analysis to the tweets sent out by communications and press staf
 
 ```{r}
 # Pull our handles
-full <- read_csv("~/Documents/Coding/data_blog/data/full_staffers.csv") %>%
+full <- read_csv("full_staffers.csv") %>%
   mutate(Handle = str_replace_all(Handle, "@", "")) %>%
   filter(Handle != "N/A")
          
-comms <- read_csv("~/Documents/Coding/data_blog/data/comms_staffers.csv") %>%
+comms <- read_csv("comms_staffers.csv") %>%
   mutate(Handle = str_replace_all(Handle, "@", "")) %>%
   filter(Handle != "N/A")
 ```
