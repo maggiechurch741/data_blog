@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Hugo Theme MemE</title>
+        <link>/</link>
+        <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
+        <generator>Hugo 0.59.1 https://gohugo.io/</generator>
+        
+            <language>en-US</language>
+        
+        
+            <managingEditor>reuixiy@gmail.com (reuixiy)</managingEditor>
+        
+        
+            <webMaster>reuixiy@gmail.com (reuixiy)</webMaster>
+        
+        
+            <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+        
+        <lastBuildDate>Sat, 04 Jan 2020 10:46:54 -0500</lastBuildDate>
+        
+            <atom:link rel="self" type="application/rss+xml" href="/rss.xml" />
+        
+        
+            <item>
+                <title>Comparing 2020 Campaign Staff Online Presence</title>
+                <link>/post/staff_tweets/</link>
+                <guid isPermaLink="true">/post/staff_tweets/</guid>
+                <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
+                
+                    <author>reuixiy@gmail.com (reuixiy)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description><![CDATA[
+
+
+<p>I wanted to see how active campaign staffers are on social media. Looking at only the communications and press staff of candidates who particpated in NBC’s debate on Nov 21, I considered their twitter presence on debate day.</p>
+<p><a href="https://ballotpedia.org/Presidential_election_key_staffers,_2020">This</a> is the list I used to get staffers’ Twitter handles. All of the candidates have two communications/press staffers, except Booker who has three, and Biden who has four.</p>
+<p>Yang and Gabbard actually each have one comms staffer, but Yang’s hasn’t tweeted since June, and Gabbard’s hasn’t tweeted since August. So they don’t show up for the rest of my analysis.</p>
+<p>Here are the findings:</p>
+<div class="figure">
+<img src="https://i.imgur.com/Cwdd2Tn.png" />
+
+</div>
+<p>Apparently, Biden’s team of four couldn’t keep up with any of the others. The 53 tweets his team did get out on debate day didn’t manage to gain much traction. Klobuchar and Warren’s situations were similar.</p>
+<p>Booker’s team, on the other hand, was pretty active on Twitter that day. But despite the volume, they didn’t gain much traction either.</p>
+<p>Sanders experience the opposite: low-activity but high visibility.</p>
+<p>Harris’s team’s Twitter game was strongest, as was her traction.</p>
+]]></description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>What to Know About Margin of Error for 2020</title>
+                <link>/post/moe/</link>
+                <guid isPermaLink="true">/post/moe/</guid>
+                <pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate>
+                
+                    <author>reuixiy@gmail.com (reuixiy)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description><![CDATA[
+
+
+<p>Recently, my friend Daniel Stublen made the argument that reporters should always include the margin of error when citing polls. This led to a discussion about what the margin of error really is. It was a good conversation, and I thought I’d share it with the world.</p>
+<div id="margin-of-error" class="section level2">
+<h2>Margin of Error</h2>
+<p>The <strong>margin of error</strong> measures how confident you are that your poll accurately reflects the sentiments of all voters. The lower the margin, the more confident you can be that you accurately estimated the population.</p>
+<div id="the-formula" class="section level3">
+<h3>The Formula</h3>
+<p>Between October 25-30, 2019, the New York Times Upshot/Siena College asked 439 Iowan, democratic, likely-caucus-participants: “Who is your first choice?” 22% responded with Elizabeth Warren.</p>
+<p>Using a 95% confidence interval, the margin of error is: <span class="math display">\[ z * SE \]</span> <span class="math display">\[ = 1.96 * \sqrt{\frac{(.5)(.5)}{439}} \]</span> <span class="math display">\[ = 4.7\% \]</span></p>
+<p>Let me break that down.</p>
+<ul>
+<li><p>The sample proportion <code>p(1-p)</code> = (.5)(.5): Okay, yeah we know that Warren got 22% in this poll, but we are going to ignore that and assume that her support level is a toss-up. 50-50 odds represents the upper bound of uncertainty, and yields the <a href="https://abcnews.go.com/PollingUnit/sampling-error-means/story?id=5984818">maximum margin of error</a>. Basically, we use 50-50 to be conservative in our estimation.</p></li>
+<li><p>Number of respondents <code>n</code> = 439: This what pollsters can really control. All else equal, more respondents will lower the margin of error. The tricky thing with polling is that you want your sample to be demographically representative of the voting population. Also, you want to capture likely voters, because only about <a href="https://fivethirtyeight.com/features/no-voter-turnout-wasnt-way-down-from-2012/">60% of elegible voters</a> actually do so.</p></li>
+<li><p>Confidence level indicator <code>z</code> = 1.96: The standard is 95% confidence, so z = 1.96. That’s because, assuming a normal distribution, 95% of all possibilities are within 1.96 standard deviations of the mean. You could use a larger confidence level, say 99%, but then your margin of error will be larger.</p></li>
+</ul>
+<p></br></p>
+<p><img src="/post/moe_files/figure-html/unnamed-chunk-1-1.png" width="288" /></p>
+<p>So the interpretation of this poll is: “At least 95 out of 100 times, <span class="math inline">\(22 \% \pm 4.7\%\)</span> of Iowa’s caucus-going democrats’ will support Warren.” But keep in mind, 22% is still the most likely outcome, given our sample.</p>
+</div>
+<div id="how-to-report-the-horse-race" class="section level3">
+<h3>How to Report the Horse Race</h3>
+<p>Here are the full results of the poll:</p>
+<p><img src="/post/moe_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<ul>
+<li><p>“Warren is polling ahead of Klobuchar” is totally okay to say, without caveats. The margin of error might actually be <em>most</em> useful to bring up when the difference in two candidates’ support is <em>outside</em> their margins (greater than a 9.2-point lead, in this case), because that means the lead is probably not due to sampling error.</p></li>
+<li><p>“Warren and Biden are in a statistical tie,” meaning, her lead on him is less than 9.2 points. I think this take is an exaggeration. I don’t think it’s misleading for a journalist to note that Warren is still <em>probably</em> ahead of Biden. In fact, it’s good information! Sure, they’re in a statistical tie, but that’s at a 95% confidence level. What if we use a 70% confidence level? Then our margin of error would be:</p></li>
+</ul>
+<p><span class="math display">\[ 1.04 * \sqrt{\frac{(.5)(.5)}{439}} \]</span> <span class="math display">\[ = 2.5\% \]</span></p>
+<p><img src="/post/moe_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Cool, so Warren’s lead over Biden is significant with 70% confidence.</p>
+</div>
+</div>
+<div id="why-do-pollsters-get-different-numbers" class="section level2">
+<h2>Why do pollsters get different numbers?</h2>
+<p>If different poll are reporting different numbers, and the difference is greater than the sum of their respective margins of error, this difference is probably not due to chance. The difference is probably structural, and has to do with <em>who</em> they sampled. Here are some of the more consequential differences in polling methods:</p>
+<p><strong>Polling method.</strong> Pollsters select respondents by either:</p>
+<ol style="list-style-type: decimal">
+<li>Calling a list of registered voters: This captures active voters, but doesn’t capture new voters and those that don’t have their number on their voter registration.</li>
+<li>Random digit dialing: This captures a larger universe, but it relies on respondents to be truthful about their registration status.</li>
+<li>Using online polls: This… is cheap. Phone response rates are <a href="https://www.pewresearch.org/fact-tank/2019/02/27/response-rates-in-telephone-surveys-have-resumed-their-decline/">pretty low these days</a> at 6%, which means more dialing and more money for phone surveys. Also, respondents are more likely to be truthful online, so this method avoids the (Bradley effect)[<a href="https://en.wikipedia.org/wiki/Bradley_effect" class="uri">https://en.wikipedia.org/wiki/Bradley_effect</a>]. However, being a nascent method, their <a href="https://www.nytimes.com/2019/07/02/upshot/online-polls-analyzing-reliability.html">accuracy is questionable</a>.</li>
+</ol>
+<p><strong>House effect.</strong> This is the systematic over-representation of Democratic or Republican respondents. Here are a couple of examples:</p>
+<ul>
+<li><p>The USC/L.A. Times polls for state races leaned democrat in 2010 because they used <a href="https://fivethirtyeight.com/features/when-house-effects-become-bias/">bilingual interviewers</a></p></li>
+<li><p>Many polls over-estimated Clinton’s support in 2016 because college graduates, who by 2016 were generally left of the aisle, are <a href="https://www.aapor.org/Education-Resources/Reports/An-Evaluation-of-2016-Election-Polls-in-the-U-S.aspx">more likely to take surveys</a></p></li>
+</ul>
+<p><strong>Weights.</strong> The above problems can theoretically be corrected by applying demographic weights, but this requires making assumptions that could be faulty.</p>
+</div>
+<div id="the-verdict" class="section level2">
+<h2>The Verdict</h2>
+<p>I agree with Daniel that it is wise for the media to mention margin of error, especially if the race is a close one. However, I don’t think journalists should go overboard and call a race a tie when it’s not.</p>
+<p>The Times/Sienna College poll that I’ve been using throughout this post was used in a <a href="https://www.nytimes.com/2019/11/01/us/politics/iowa-poll-warren-biden.html">Times piece</a> a couple of days after the poll was conducted. Here’s how they visualized the results:</p>
+<div class="figure">
+<img src="https://i.imgur.com/ppEyQ9m.jpg" />
+
+</div>
+<p>This figure was one of the first things you read in the article. I think its format is the norm for poll visualizations: percentages. I would prefer to see the type of graph that I created above: percentages <em>with</em> error bars. The margin of error isn’t even mentioned until about halfway down the article, and it’s never interpreted.</p>
+<div class="figure">
+<img src="https://i.imgur.com/xaTQN9m.jpg" />
+
+</div>
+<p>Honestly, I don’t know the extent to which voters are mislead by an article like this, and I don’t know the extent to which polls effect voting behavior. Well, I do know that there can be a <a href="http://researchdmr.com/Why_Are_Polls_Self_Fulfilling_Prophecies">bandwagon effect</a> that makes poll results a bit self-fulfilling.</p>
+<p>The bottom line is: let’s all be data literate around election time, and remember what the margin of error means!</p>
+</div>
+]]></description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>Tidy Tuesday: Avoiding Dual Axis Plots</title>
+                <link>/post/01-29-2019-usda-post/</link>
+                <guid isPermaLink="true">/post/01-29-2019-usda-post/</guid>
+                <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
+                
+                    <author>reuixiy@gmail.com (reuixiy)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description><![CDATA[
+
+
+<div id="visualizing-two-variables-of-interest" class="section level1">
+<h1>Visualizing Two Variables of Interest</h1>
+<div id="the-prompt" class="section level2">
+<h2>The Prompt</h2>
+<p>For my first #tidytuesday, I chose an old prompt. I wanted to explore USDA milk consumption data. The accompanying <a href="https://www.npr.org/2019/01/09/683339929/nobody-is-moving-our-cheese-american-surplus-reaches-record-high">NPR article</a> considers the oversupply of cheese in the US. Andrew Novakovic, an agricultural economist at Cornell University, explained that milk production has risen while consumption has fallen, so suppliers turn the milk into cheese which is less perishable. But Americans are turning to less processed/more expensive cheeses, and consuming cheese overall.</p>
+<p>Since I was late to this prompt, I was able to check out what others had already done with it. <a href="https://twitter.com/Alex_Danvers/status/1090496421160075264">@Alex_Danvers</a> compared milk production to google search trends for “lactose,” which I thought was interesting. I decided to do the same, but for milk <em>consumption</em>, which I thought was more relevant.</p>
+</div>
+<div id="the-data" class="section level2">
+<h2>The Data</h2>
+<p>The USDA dairy consumption data has yearly domestic consumption for milk, yogurt, butter, etc. in lbs per person, between 1975-2018. I’m just going to focus on milk.</p>
+<pre><code>## # A tibble: 6 x 8
+##    year  milk yogurt butter american_cheese other_cheese cottage_cheese
+##   &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;           &lt;dbl&gt;        &lt;dbl&gt;          &lt;dbl&gt;
+## 1  1975   247    2      4.7             8.1          6.1            4.6
+## 2  1976   247    2.1    4.3             8.9          6.6            4.6
+## 3  1977   244    2.3    4.3             9.2          6.8            4.6
+## 4  1978   241    2.4    4.4             9.5          7.3            4.6
+## 5  1979   238    2.4    4.5             9.6          7.6            4.4
+## 6  1980   234    2.5    4.5             9.6          7.9            4.4
+## # … with 1 more variable: ice_cream &lt;dbl&gt;</code></pre>
+<p>The Google Trends data is monthly, and unfortunately only goes back to 2004. Values represent search interest relative to the highest point on the chart for U.S. searches between 2004 and 2018. A value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular as when it peaked. In this data, the term peaked in July of 2018.</p>
+<pre><code>## # A tibble: 6 x 2
+##   Month   `lactose: (United States)`
+##   &lt;chr&gt;                        &lt;int&gt;
+## 1 2004-01                         42
+## 2 2004-02                         41
+## 3 2004-03                         51
+## 4 2004-04                         43
+## 5 2004-05                         42
+## 6 2004-06                         41</code></pre>
+<p>Since the USDA data is yearly, I find the yearly average of lactose trends and merge the datasets on year.</p>
+</div>
+</div>
+<div id="the-plot" class="section level1">
+<h1>The Plot</h1>
+<div id="dual-axis-plot" class="section level3">
+<h3>Dual Axis Plot</h3>
+<p>First, I plotted both of the variables I was interested in (milk consumption and google search trends) over time. Here’s the graph using raw data. We can see that there’s a spike in search popularity between 2010-2012 and 2014-2018, and a steep decrease in milk consumption between 2010-2014. These two variables definitely appear to be negatively correlated, and indeed their correlation coefficient is -0.98, but is this the best way to demonstrate their relationship?</p>
+<p><img src="/post/01-29-2019-USDA-post_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="side-by-side-plot" class="section level3">
+<h3>Side-by-Side Plot</h3>
+<p>My partner Andrew convinced me that dual axis plots are generally bad practice. Lisa Charlotte Ross <a href="https://blog.datawrapper.de/dualaxis/">wrote a great post</a> about why that is. Basically, they can be misleading about relationships.</p>
+<p>One of Lisa’s suggestions was to use side-by-side plots. This doesn’t really offer any more information, but it does keep the reader from making those subconscious false assumptions due to dual axes.</p>
+<p><img src="/post/01-29-2019-USDA-post_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="labeled-scatterplot" class="section level3">
+<h3>Labeled scatterplot</h3>
+<p>Another of Lisa’s suggestions was to create a Labeled scatterplot instead. This is nice because it shows us the relationship between our variables of interest, without excluding the year, which itself contains a lot of implicit info.</p>
+<p>Below, I see that there is a negative relationship between lactose search trends and milk consumption. We also see that lactose searches increase over time, and milk consumption decreases over time. However, I liked having year on the x-axis. I think it’s more intuitive, and I like seeing each variable’s slope over time.</p>
+<p><img src="/post/01-29-2019-USDA-post_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="indexed-plot-standardized" class="section level3">
+<h3>Indexed Plot (Standardized)</h3>
+<p>One last suggestion of Lisa’s was to make an indexed plot. That is, adjust the scales of our two data series and compare them on one common scale.</p>
+<p>I index first by standardizing. This is what <span class="citation">@Alex_Danvers</span> did in the first place. Here I’m essentially just rescaling the vertical axes into relative terms. Notice all that space between these two lines in the original graph? Well, now I can zoom in on the action. Yes, I lose the information that the absolute values tell us, but I’m more interested in the relative changes anyways.</p>
+<p>The y-axis here will be z-score. In case you forgot Stat 101, the z-score indicates how much a given value differs from the standard deviation. For example, I can see that in 2006, milk consumption was 1 standard deviation above the mean consumption between 2004-2018.</p>
+<p>Below, I can see the same trends that I saw in my first graph, but more clearly. There’s that spike in search popularity between 2010-2012 and 2014-2018, and that big fall in milk consumption between 2010-2014. As it should be, the correlation coefficient of milk consumption and lactose search popularity is the same as before, -0.98.</p>
+<p><img src="/post/01-29-2019-USDA-post_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Note that when <span class="citation">@Alex_Danvers</span> made this graph using milk <em>production</em> instead of consumption, he found a weaker relationship with lactose search popularity. This makes sense to me.</p>
+<p>To like this graph, you have to understand z-scores, which is a bit esoteric. But I do like the way it allows me to effectively compare the two series on a common scale</p>
+</div>
+<div id="indexed-plot-change" class="section level3">
+<h3>Indexed Plot (% Change)</h3>
+<p>Next, I index using percent changes instead. That works well here because both of my variables of interest have similar rates of change, so I can easily see what’s going on with each.</p>
+<p>Below, I can see that milk consumption declined in each year in our time period, and lactose searches increase for all but one year. When google searches for lactose experienced a big jump However, when “lactose” searches experienced another jump in 2017, this time milk consumption <em>doesn’t</em> fall hard. Thus, it doesn’t seem like the changes in lactose searches and the changes in milk consumption are very related. As it turns out, the correlation coefficient this time is -0.13.</p>
+<p><img src="/post/01-29-2019-USDA-post_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>I like this last plot the best, because it holds the most interesting story. While all of the other graphs showed that lactose searches go up during the same time that milk consumption goes down, this is the only graph that suggests the spikes aren’t necessarily related.</p>
+</div>
+</div>
+]]></description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+            <item>
+                <title>AT Visualized</title>
+                <link>/post/at_data_analysis/</link>
+                <guid isPermaLink="true">/post/at_data_analysis/</guid>
+                <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
+                
+                    <author>reuixiy@gmail.com (reuixiy)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description><![CDATA[
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/plotly-binding/plotly.js"></script>
+<script src="/rmarkdown-libs/typedarray/typedarray.min.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
+<link href="/rmarkdown-libs/plotly-htmlwidgets-css/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/plotly-main/plotly-latest.min.js"></script>
+
+
+<p>In 2019, I hiked northbound on the Appalachian Trail, 2,192 from Georgia to Maine. It took 170 days. After I finished, I went through my journal and guidebook to create a spreadsheet with each day’s mileage, location, sleep site, and other notes.</p>
+<p>Below, I visualize my mileage and attempt to find trends. I also breakdown my sleep sites by type.</p>
+<p><br></p>
+<p><img src="/post/AT_data_analysis_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Clearly, my mileage was all over the place. I started out relatively strong. I began to really push my mileage in VA. My pace slowed a bit in PA, probably due to the rocks and heat. Between NJ and VT, I changed my hiking style, hiking fewer miles but more consistently. I slowed significantly in NH and southern ME because of the difficult terrain, and picked back up in the Hundred Mile Wilderness.</p>
+<p>My average mileage was 12.89 if I include zero days and 14.52 if I exclude them.</p>
+<p>My biggest day was 31 miles.</p>
+<p>I took a total of 19 zero days: 8 were on-trail (this includes days spent in trail towns), 8 were off-trail, and 3 were for Trail Days.</p>
+<p>The average number of days that I hiked before taking a zero day was 7.58.</p>
+<p>My longest stretch without taking a zero day was 24 days, between NJ and VT.</p>
+<p><br></p>
+<div id="htmlwidget-1" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"data":[{"labels":["outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","outdoors","outdoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","outdoors","outdoors","indoors","outdoors","outdoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","indoors","outdoors","indoors","outdoors","outdoors","outdoors","outdoors","indoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","outdoors","outdoors","indoors","indoors","indoors","indoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","indoors","indoors","indoors","outdoors","indoors","indoors","indoors","outdoors","outdoors","outdoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","outdoors","indoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors","indoors","indoors","outdoors","outdoors","outdoors","indoors","indoors","outdoors","indoors","indoors","indoors","indoors","indoors","indoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","indoors","outdoors","outdoors","indoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","outdoors","indoors","indoors","outdoors","outdoors","outdoors","outdoors","outdoors","indoors"],"showlegend":true,"textinfo":"none","type":"pie","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"frame":null},{"labels":["Airbnb","AMC Hut","Campsite","Home","Hostel","Hotel","Paid Campsite","Shelter","Stealth","Yard"],"values":[5,5,3,12,17,16,5,71,28,8],"marker":{"color":"rgba(255,127,14,1)","colors":["#0ec3ff","#f7b6a6","#f7cea8","#e8b4a7","#fcd19f","#ffaea3","#c7dbfc","#a5c4fa","#c2c6fc","#709ae0"],"line":{"color":"rgba(255,127,14,1)"}},"sort":false,"showlegend":false,"textinfo":"none","type":"pie","hole":0.6,"frame":null}],"layout":{"NA":{"anchor":[],"domain":[0,1]},"NA2":{"anchor":[],"domain":[0,1]},"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":true,"title":"Site Types (this is interactive, so hover around!)","xaxis":{"showgrid":false,"zeroline":false,"showticklabels":false},"yaxis":{"showgrid":false,"zeroline":false,"showticklabels":false}},"attrs":{"d1e23460cd58":{"labels":{},"showlegend":true,"textinfo":"none","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"pie"},"d1e24b686b5d":{"labels":{},"values":{},"marker":{"colors":["#0ec3ff","#f7b6a6","#f7cea8","#e8b4a7","#fcd19f","#ffaea3","#c7dbfc","#a5c4fa","#c2c6fc","#709ae0"]},"sort":false,"showlegend":false,"textinfo":"none","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"pie","hole":0.6,"inherit":true}},"source":"A","config":{"modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"cloud":false},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"subplot":true,"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":[]}</script>
+<p>The plurality win goes to shelters. I slept in or tented near shelters due to their amenities: large tenting space, a roof, privy, bear box.</p>
+<p>I slept outdoors for only 67% of the nights. In retrospect, I didn’t realize I had slept indoors so often, but it didn’t feel more than other hikers…</p>
+<p>In terms of paid lodging, I spent 38 nights in either a hotel, hostel, Airbnb, or paid campsite. 7 of those hostels were donation-based barns or churchs. 3 of the paid campsites were for Trail Days.</p>
+]]></description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
+        
+    </channel>
+</rss>
