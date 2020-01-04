@@ -1,5 +1,5 @@
 ######################## default configuration ####################
-baseURL = "/"
+baseURL = "https://www.datamaggie.com/"
 languageCode = "en-us"
 title = "Liva | Personal blog template"
 theme = "liva-hugo"
