@@ -87,14 +87,14 @@
 <p>The USDA dairy consumption data has yearly domestic consumption for milk, yogurt, butter, etc. in lbs per person, between 1975-2018. I’m just going to focus on milk.</p>
 <pre><code>## # A tibble: 6 x 8
 ##    year  milk yogurt butter american_cheese other_cheese cottage_cheese
-##   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;           &lt;dbl&gt;        &lt;dbl&gt;          &lt;dbl&gt;
-## 1  1975   247   1.97   4.73            8.15         6.13           4.59
-## 2  1976   247   2.13   4.31            8.88         6.63           4.63
-## 3  1977   244   2.34   4.29            9.21         6.78           4.62
-## 4  1978   241   2.45   4.35            9.53         7.31           4.60
-## 5  1979   238   2.44   4.49            9.60         7.57           4.43
-## 6  1980   234   2.50   4.47            9.62         7.90           4.41
-## # ... with 1 more variable: ice_cream &lt;dbl&gt;</code></pre>
+##   &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;           &lt;dbl&gt;        &lt;dbl&gt;          &lt;dbl&gt;
+## 1  1975   247    2      4.7             8.1          6.1            4.6
+## 2  1976   247    2.1    4.3             8.9          6.6            4.6
+## 3  1977   244    2.3    4.3             9.2          6.8            4.6
+## 4  1978   241    2.4    4.4             9.5          7.3            4.6
+## 5  1979   238    2.4    4.5             9.6          7.6            4.4
+## 6  1980   234    2.5    4.5             9.6          7.9            4.4
+## # … with 1 more variable: ice_cream &lt;dbl&gt;</code></pre>
 <p>The Google Trends data is monthly, and unfortunately only goes back to 2004. Values represent search interest relative to the highest point on the chart for U.S. searches between 2004 and 2018. A value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular as when it peaked. In this data, the term peaked in July of 2018.</p>
 <pre><code>## # A tibble: 6 x 2
 ##   Month   `lactose: (United States)`

@@ -1,0 +1,179 @@
+date,day,mile,mileage,nero_or_zero,site_type,how_slept,site_name,nero_reason,notes
+4/13/19,1,2.8,2.8,1,Shelter,Shelter,Spring Mountain Shelter,early,
+4/14/19,2,15.7,12.9,1,Shelter,Shelter,Gooch Mountain Shelter,early,
+4/15/19,3,24.7,9,1,Stealth,Tent,,early,
+4/16/19,4,42.7,18,0,Shelter,Tent,Whitley Gap Shelter,,
+4/17/19,5,58.2,15.5,0,Shelter,Tent,Tray Mountain Shelter,,
+4/18/19,6,73.7,15.5,0,Shelter,Tent,Plumorchard Shelter,,
+4/19/19,7,85,11.3,1,Hotel,Hotel,Deep Gap,town,Franklin
+4/20/19,8,85.9,0.9,1,Shelter,Shelter,Standing Indian Shelter,town,Franklin
+4/21/19,9,102.2,16.3,0,Shelter,Shelter,Long Branch Shelter,,
+4/22/19,10,113.1,10.9,1,Shelter,Shelter,Siler Bald Shelter,?,
+4/23/19,11,131,17.9,0,Shelter,Tent,Wesser Bald Shelter,,
+4/24/19,12,136.7,5.7,1,Stealth,Tent,Hobo Island,cool site,NOC
+4/25/19,13,152.9,16.2,0,Shelter,Tent,Brown Fork Gap Shelter,,
+4/26/19,14,158.3,5.4,1,Hostel,Hostel,Yellow Creek Gap,town,Paradise b&b
+4/27/19,15,165.7,7.4,1,Shelter,Shelter,Fontana Dam Shelter,cool site,
+4/28/19,16,180.8,15.1,0,Shelter,Shelter,Russell Field Shelter,,
+4/29/19,17,195.5,14.7,0,Shelter,Shelter,Siler's Bald Shelter,,
+4/30/19,18,207.7,12.2,1,Airbnb,Hotel,Newfound Gap,town,
+5/1/19,19,207.7,0,1,Airbnb,Hotel,Newfound Gap,town,
+5/2/19,20,210.8,3.1,1,Shelter,Shelter,Icewater Spring Shelter,town,
+5/3/19,21,218.2,7.4,1,Shelter,Shelter,Peck’s corner shelter,illness,Rob's tendinitis 
+5/4/19,22,231.1,12.9,1,Shelter,Shelter,Cosby Knob Shelter,?,
+5/5/19,23,243.7,12.6,1,Stealth,Tent,Painter Branch,?,
+5/6/19,24,261.8,18.1,0,Shelter,Tent,Walnut Shelter,,Max Patch
+5/7/19,25,274.9,13.1,1,Hotel,Hotel,Hot Springs,town,
+5/8/19,26,283.3,8.4,1,Stealth,,That firetower...,town,
+5/9/19,27,301.8,18.5,0,Shelter,Tent,Jerry's Cabin Shelter,,Met chef and Frizz
+5/10/19,28,317.3,15.5,0,Shelter,Shelter,Hogback Ridge Shelter,,Played Mao
+5/11/19,29,338,20.7,0,Shelter,,No Business Knob,,
+5/12/19,30,348.5,10.5,1,Shelter,Shelter,Curley Maple Gap Shelter,town,(right after uncle johnny's)
+5/13/19,31,370.4,21.9,0,Shelter,Tent,Clyde Smith Shelter,,(met lungr)
+5/14/19,32,386,15.6,0,Shelter,Shelter,Overmountain Shelter,,
+5/15/19,33,395.2,9.2,1,Hostel,Hostel,Roan Mountain,town,
+5/16/19,34,395.2,0,1,Paid Campsite,Tent,Tent City,trail days,
+5/17/19,35,395.2,0,1,Paid Campsite,Tent,Tent City,trail days,
+5/18/19,36,395.2,0,1,Paid Campsite,Tent,Tent City,trail days,
+5/19/19,37,404,8.8,1,Shelter,Shelter,Mountaineer Shelter,trail days,
+5/20/19,38,421.2,17.2,0,Stealth,Tent,Laurel Fork Falls,,
+5/21/19,39,428.3,7.1,1,Hostel,Hostel,Boots Off,town,
+5/22/19,40,444.4,16.1,0,Shelter, ,Iron Mountain Shelter,,
+5/23/19,41,460.4,16,0,Shelter,Tent,Abingdon Gap Shelter,,
+5/24/19,42,470.6,10.2,1,Hostel,Hostel,Damascus,town,
+5/25/19,43,480.1,9.5,1,Shelter, ,Saunders Shelter,town,
+5/26/19,44,499,18.9,0,Shelter,Tent,Thomas Knob,,(Grayson Highlands)
+5/27/19,45,507.9,8.9,1,Stealth,Tent,,cool site,
+5/28/19,46,534,26.1,0,Hotel,Hotel,Marion,,
+5/29/19,47,534,0,1,Hotel,Hotel,Marion,town,
+5/30/19,48,534,0,1,Shelter,Tent,Partnership Shelter,town,
+5/31/19,49,552.5,18.5,0,Stealth,Tent,Reed Creek,,
+6/1/19,50,580.4,27.9,0,Shelter,Tent,Jenkins Shelter,,
+6/2/19,51,591.7,11.3,1,Hotel,Hotel,Bland,weather,hail
+6/3/19,52,612,20.3,0,Stealth,Tent,Dismal Falls,,
+6/4/19,53,636,24,0,Hostel,Hostel,Angel's Rest,,
+6/5/19,54,637,1,1,Stealth,Tent,VA Route 100,town,
+6/6/19,55,656.3,19.3,0,Shelter,Shelter,Pine Swamp Branch Shelter,,
+6/7/19,56,669,12.7,1,Shelter,Tent,War Spur Shelter,visitor,
+6/8/19,57,681.2,12.2,1,Shelter,Shelter,Sarver Hallow Shelter,visitor,
+6/9/19,58,703.9,22.7,0,Hostel,Hostel,Four Pines,,
+6/10/19,59,711.9,8,1,Shelter,Shelter,Catawba Mountain Shelter,town,
+6/11/19,60,729.7,17.8,0,Hotel,Hotel,Daleville,,
+6/12/19,61,729.7,0,1,Hotel,Hotel,Daleville,town,
+6/13/19,62,740.9,11.2,1,Shelter,?,Wilson Creek Shelter,town,
+6/14/19,63,757.9,17,0,Stealth,Tent,Jenning's Creek,,"(after taboo, by road, with buttercup)"
+6/15/19,64,771.9,14,1,Shelter,?,Thunder Hill Shelter,?,
+6/16/19,65,786.7,14.8,0,Shelter,Tent,Glasgow ,,
+6/17/19,66,797.2,10.5,1,Shelter,Shelter,Punchbowl Shelter,weather,rained
+6/18/19,67,822.5,25.3,0,Shelter,Shelter,Seeley-Woodworth Shelter,,
+6/19/19,68,844.6,22.1,0,Yard,Tent,Devil's Backbone,,
+6/20/19,69,851.3,6.7,1,Stealth,Tent,Wintergreen View,town,
+6/21/19,70,863.7,12.4,1,Yard,Tent,Waynesboro,town,
+6/22/19,71,871.4,7.7,1,Shelter,Shelter,Calf Mountain Shelter,town,
+6/23/19,72,884.4,13,1,Shelter,,Blackrock Hut,illness,spacey overheated
+6/24/19,73,905.8,21.4,0,Shelter,Shelter,Hightop Hut,,
+6/25/19,74,929.7,23.9,0,Shelter,Tent,Rock Spring Hut,,
+6/26/19,75,958.1,28.4,0,Shelter,Tent,Gravel Springs Hut,,
+6/27/19,76,971.5,13.4,1,Hostel,Hostel,Front Royal,town,
+6/28/19,77,995.1,23.6,0,Shelter,Shelter,Rod Hallow Shelter,,
+6/29/19,78,1016.2,21.1,0,Shelter,Shelter,David Lesser Memorial Shelter,,
+6/30/19,79,1025.3,9.1,1,Home,Home,D.C.,town,
+7/1/19,80,1025.3,0,1,Home,Home,D.C.,town,
+7/2/19,81,1025.3,0,1,Home,Home,D.C.,town,
+7/3/19,82,1025.3,0,1,Home,Home,D.C.,town,
+7/4/19,83,1025.3,0,1,Hostel,Hostel,Harper's Ferry,town,
+7/5/19,84,1042.7,17.4,0,Campsite,Tent,Dahlgreen Backpack Campground,,
+7/6/19,85,1061.5,18.8,0,Shelter,Shelter,Raven Rock Shelter,,
+7/7/19,86,1074.7,13.2,1,Shelter,Shelter,Tumbling Run Shelter,town,(went to applebees)
+7/8/19,87,1094.3,19.6,0,Shelter,Tent,Birch Run Shelter,,
+7/9/19,88,1104.2,9.9,1,Paid Campsite,Tent,Pine Grove Furnace State Park,cool site,
+7/10/19,89,1123.4,19.2,0,Campsite,Tent,Boiling Springs,,
+7/11/19,90,1133.7,10.3,1,Hostel,Hostel (db),Duncannon,town,
+7/12/19,91,1148.6,14.9,0,Hostel,Hostel (db),Duncannon,,
+7/13/19,92,1166.4,17.8,0,Stealth,Tent,,,
+7/14/19,93,1191.3,24.9,0,Shelter,Tent,William Penn Shelter,,
+7/15/19,94,1210.6,19.3,0,Shelter,Tent,Eagle's Nest Shelter,,
+7/16/19,95,1219.3,8.7,1,Home,Home,Rob's,town,
+7/17/19,96,1219.3,0,1,Home,Home,Rob's,town,
+7/18/19,97,1245.9,26.6,0,Hotel,Hotel,Route 209,,
+7/19/19,98,1259.6,13.7,1,Yard,Tent,Palmerton,weather,slept outside ice cream place
+7/20/19,99,1271.8,12.2,1,Hotel,Hotel,Smith Gap,weather,
+7/21/19,100,1279.9,8.1,1,Hostel,Hostel (db),Wind Gap,illness,
+7/22/19,101,1295.4,15.5,0,Hostel,Hostel (db),DWG,,
+7/23/19,102,1307.1,11.7,1,Stealth,Tent,Kittatinny Ridge,town,
+7/24/19,103,1326.8,19.7,0,Shelter,Tent,Gren Anderson Shelter,,
+7/25/19,104,1345.1,18.3,0,Yard,Tent,Secret Shelter,,
+7/26/19,105,1364.2,19.1,0,Yard,Tent,Warwick,,
+7/27/19,106,1364.2,0,1,Airbnb,Hotel,NYC,town,
+7/28/19,107,1364.2,0,1,Airbnb,Hotel,NYC,town,
+7/29/19,108,1369.1,4.9,1,Stealth,Tent,Furnace Brook,town,
+7/30/19,109,1384.1,15,0,Stealth,Tent,,,
+7/31/19,110,1401.9,17.8,0,Stealth,Tent,Bear Mountain,,
+8/1/19,111,1420,18.1,0,Stealth,Tent,Dennytown Road,,lot with spigot
+8/2/19,112,1435.9,15.9,0,Yard,Tent,Deli,,
+8/3/19,113,1460.4,24.5,0,Shelter,Tent,Ten Mile River Shelter,,funny guy
+8/4/19,114,1473.2,12.8,1,Stealth,Tent,St. John's Ledges,town,
+8/5/19,115,1480.2,7,1,Hotel,Hotel,Cornwall Bridge,town,(NYC w/ andrew)
+8/6/19,116,1491.5,11.3,1,Campsite,Tent,Belter's Campsite,town,
+8/7/19,117,1514.4,22.9,0,Home,Home,Guilder Pond,,
+8/8/19,118,1536.3,21.9,0,Shelter,Tent,North Mt WIlcox Shelter,,
+8/9/19,119,1550.5,14.2,1,Hotel,Hut,Upper Goose Pond,,
+8/10/19,120,1552.1,1.6,1,Home,Home,US Route 20,town,Boston!
+8/11/19,121,1554.9,2.8,1,Stealth,Tent,Finerty Pond,town,return from boston
+8/12/19,122,1570.9,16,0,Yard,Tent,Levardi's,,ran into rob!
+8/13/19,123,1591.7,20.8,0,Stealth,Tent,Mt Prospect Ledge,,Right after Mt Greylock
+8/14/19,124,1614.4,22.7,0,Shelter,Tent,Melville Nauheim Shelter,,Kate came!
+8/15/19,125,1622.9,8.5,1,Shelter,Tent,Goddard Shelter,visitor,
+8/16/19,126,1634.4,11.5,1,Stealth,,Black Brook,visitor,
+8/17/19,127,1650.1,15.7,0,Shelter,Shelter,Spruce Peak Shelter,,Stratton day...super nice hut
+8/18/19,128,1655.9,5.8,1,Shelter,Shelter,Bromley Mountain,cool site,
+8/19/19,129,1677.5,21.6,0,Shelter,Tent,Greenwall Shelter,,right after rock garden
+8/20/19,130,1696.7,19.2,0,Stealth,Stealth,Killington Peak,,
+8/21/19,131,1706.3,9.6,1,Hotel,Hotel,Killington,town,
+8/22/19,132,1706.3,0,1,Home,Home,Killington,town,
+8/23/19,133,1726.7,20.4,0,Hostel,Hostel (db),Dan's Barn,,
+8/24/19,134,1749.8,23.1,0,Yard,Tent,Yoshi's,,
+8/25/19,135,1758.5,8.7,1,Stealth,Tent,Mink Brook,town,return from Yoshi's
+8/26/19,136,1782.2,23.7,0,Stealth,Tent,Brackett Brook,,"Mt Cube, texted andrew"
+8/27/19,137,1783.4,1.2,1,Home,Home,James's,town,
+8/28/19,138,1783.4,0,1,Home,Home,James's,town,
+8/29/19,139,1801.1,17.7,0,Shelter,Shelter,Beaver Brook Shelter,,enter whites!
+8/30/19,140,1816,14.9,0,AMC Hut,Hut,Lonesome Lake Hut,,
+8/31/19,141,1831.9,15.9,0,AMC Hut,Hut,Galehead Hut,,
+9/1/19,142,1838.9,7,1,AMC Hut,Hut,Zealand Falls Hut,weather,
+9/2/19,143,1846.6,7.7,1,Hotel,Hotel,Crawford Notch,terrain,
+9/3/19,144,1857.7,11.1,1,AMC Hut,Hut,Lake of the Clouds,terrain,
+9/4/19,145,1864.8,7.1,1,AMC Hut,Hut,Madison Spring Hut,weather,
+9/5/19,146,1878.5,13.7,1,Stealth,Tent,Carter Notch hut,terrain,
+9/6/19,147,1893.7,15.2,0,Hotel,Hotel,Gorham,,
+9/7/19,148,1893.7,0,1,Airbnb,Hotel,Gorham,town,
+9/8/19,149,1905.5,11.8,1,Shelter,Tent,Gentian Pond Shelter,town,
+9/9/19,150,1915.1,9.6,1,Shelter,Tent,Full Goose Shelter,terrain,
+9/10/19,151,1927.1,12,1,Shelter,Shelter,Baldplate Lean-to,terrain,
+9/11/19,152,1935.1,8,1,Hostel,Hostel,Human Nature Hostel,town,
+9/12/19,153,1946.3,11.2,1,Stealth,Stealth,cool site,?,Movie night
+9/13/19,154,1962.2,15.9,0,Shelter,Tent,Sabbath Day Pond Lean-to,,
+9/14/19,155,1971.6,9.4,1,Hostel,Hostel (db),Rangeley,town,
+9/15/19,156,1986.9,15.3,0,Stealth,Tent,Perham Stream,,picnic w/ wine
+9/16/19,157,2003.8,16.9,0,Hotel,Hotel,Stratton,,
+9/17/19,158,2003.8,0,1,Hotel,Hotel,Stratton,illness,"Spacey sick, enter james"
+9/18/19,159,2008.9,5.1,1,Shelter,Tent,Horns Pond Lean-to,illness,
+9/19/19,160,2019.1,10.2,1,Shelter,Tent,Little Bigelow Lean-to,illness,"ran into eeyore, near ""the tubs"""
+9/20/19,161,2036.8,17.7,0,Shelter,Tent,Pierce Pond Lean-to,,
+9/21/19,162,2046.5,9.7,1,Shelter,Tent,Pleasant Pond Lean-to,town,"canoe, caratunk"
+9/22/19,163,2077.5,31,0,Hostel,Hostel,Shaw's,,
+9/23/19,164,2077.5,0,1,Hostel,Hostel,Shaw's,town,
+9/24/19,165,2091.8,14.3,1,Stealth,Stealth,Long Pond Stream,terrain,
+9/25/19,166,2113.4,21.6,0,Shelter,Tent,Carl Newhall Lean-to,,
+9/26/19,167,2132.3,18.9,0,Shelter,Tent,Cooper Brook Falls Lean-to,,no movie tonight
+9/27/19,168,2161.9,29.6,0,Shelter,Tent,Rainbow Stream Lean-to,,
+9/28/19,169,2177,15.1,0,Paid Campsite,Tent,Abol Pines,,
+9/29/19,170,2192,15,0,Home,Home,Portland,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,average mileage ,12.89411765,,,,,,
+# zeros ,19,average mileage (excluding zeros),14.51655629,,,,,,
+"# neros (0, 6]",12,average mileage (excluding neros),15.47985612,,,,,,
+"# half days (6, 14.5]",61,average mileage (excluding half days),19.3974359,,,,,,
+# full days,78,,,,,,,,

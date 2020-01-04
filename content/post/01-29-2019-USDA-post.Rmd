@@ -35,10 +35,11 @@ Since I was late to this prompt, I was able to check out what others had already
 
 The USDA dairy consumption data has yearly domestic consumption for milk, yogurt, butter, etc. in lbs per person, between 1975-2018. I'm just going to focus on milk.
 ```{r}
-dairy <- read_excel("~/Documents/Coding/data_blog/data/dairy_consumption.xlsx",
-                 skip = 10, 
-                 col_names = FALSE) %>%
-  select(c(X__1:X__7, X__13)) %>%
+dairy <- read_csv("dairy_consumption.csv",
+                 col_names = FALSE
+                  ) %>%
+  as_tibble(.name_repair = 'universal') %>%
+  select(c(1:7,13)) %>%
   set_colnames(c("year", "milk", "yogurt", "butter", "american_cheese", 
                  "other_cheese", "cottage_cheese", "ice_cream")) %>%
   filter(!is.na(year)) %>%
@@ -50,7 +51,7 @@ head(dairy)
 
 The Google Trends data is monthly, and unfortunately only goes back to 2004. Values represent search interest relative to the highest point on the chart for U.S. searches between 2004 and 2018. A value of 100 is the peak popularity for the term. A value of 50 means that the term is half as popular as when it peaked. In this data, the term peaked in July of 2018.
 ```{r}
-trends <- read_csv("~/Documents/Coding/data_blog/data/lactose_trend.csv",
+trends <- read_csv("lactose_trend.csv",
                skip = 2) 
 
 head(trends)

@@ -46,7 +46,7 @@ full <- read_csv("~/Documents/Coding/data_blog/data/full_staffers.csv") %>%
   mutate(Handle = str_replace_all(Handle, "@", "")) %>%
   filter(Handle != "N/A")
          
-comms <- read_csv("~/Documents/Coding/data_blog/data/comms_staffers.csv") %>%
+comms <- read_csv("comms_staffers.csv") %>%
   mutate(Handle = str_replace_all(Handle, "@", "")) %>%
   filter(Handle != "N/A")
 
