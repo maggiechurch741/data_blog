@@ -11,13 +11,14 @@ knitr::opts_chunk$set(echo = FALSE, eval = TRUE, message = FALSE, warning = FALS
 ```
 
 
-I'll limit this analysis to the tweets sent out by communications and press staff for candidates who particpated in yesterday's debate, and to the tweets sent out on debate day (Nov 21, 2019).
+I wanted to see how active campaign staffers are on social media. Looking at only the communications and press staff of candidates who particpated in NBC's debate  on Nov 21, I considered their twitter presence on debate day.
 
 
-[This](https://ballotpedia.org/Presidential_election_key_staffers,_2020) is the list I used to get staffers' Twitter handles. All of our candidates have two communications/press staffers, except Booker who has three, and Biden who has four. 
+[This](https://ballotpedia.org/Presidential_election_key_staffers,_2020) is the list I used to get staffers' Twitter handles. All of the candidates have two communications/press staffers, except Booker who has three, and Biden who has four. 
 
 Yang and Gabbard actually each have one comms staffer, but Yang's hasn't tweeted since June, and Gabbard's hasn't tweeted since August. So they don't show up for the rest of my analysis.
 
+Here are the findings: 
 ```{r, eval = F}
 # I suppose you can only pull tweets from the past week :( I should have cached the api chunk, and/or saved the df. I saved the image from the last time I ran this. So that's all I can use, for now. But below is how I made it:
 
