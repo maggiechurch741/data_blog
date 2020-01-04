@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on A Hugo website</title>
+    <title>Posts on Liva | Personal blog template</title>
     <link>/post/</link>
-    <description>Recent content in Posts on A Hugo website</description>
+    <description>Recent content in Posts on Liva | Personal blog template</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 22 Nov 2019 00:00:00 +0000</lastBuildDate>
@@ -13,44 +13,38 @@
     
     <item>
       <title>Comparing 2020 Campaign Staff Online Presence</title>
-      <link>/2019/11/22/comparing-2020-campaign-staff-online-presence/</link>
+      <link>/post/staff_tweets/</link>
       <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/11/22/comparing-2020-campaign-staff-online-presence/</guid>
-      <description>I’ll limit this analysis to the tweets sent out by communications and press staff for candidates who particpated in yesterday’s debate, and to the tweets sent out on debate day (Nov 21, 2019).
-This is the list I used to get staffers’ Twitter handles. All of our candidates have two communications/press staffers, except Booker who has three, and Biden who has four.
-Yang and Gabbard actually each have one comms staffer, but Yang’s hasn’t tweeted since June, and Gabbard’s hasn’t tweeted since August.</description>
+      <guid>/post/staff_tweets/</guid>
+      <description>I’ll limit this analysis to the tweets sent out by communications and press staff for candidates who particpated in yesterday’s debate, and to the tweets sent out on debate day (Nov 21, 2019).</description>
     </item>
     
     <item>
       <title>What to Know About Margin of Error for 2020</title>
-      <link>/2019/11/19/what-to-know-about-margin-of-error-for-2020/</link>
+      <link>/post/moe/</link>
       <pubDate>Tue, 19 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/11/19/what-to-know-about-margin-of-error-for-2020/</guid>
-      <description>Recently, my friend Daniel Stublen made the argument that reporters should always include the margin of error when citing polls. This led to a discussion about what the margin of error really is. It was a good conversation, and I thought I’d share it with the world.
-Margin of Error The margin of error measures how confident you are that your poll accurately reflects the sentiments of all voters. The lower the margin, the more confident you can be that you accurately estimated the population.</description>
+      <guid>/post/moe/</guid>
+      <description>Recently, my friend Daniel Stublen made the argument that reporters should always include the margin of error when citing polls.</description>
     </item>
     
     <item>
       <title>Tidy Tuesday: Avoiding Dual Axis Plots</title>
-      <link>/2019/11/05/tidy-tuesday-avoiding-dual-axis-plots/</link>
+      <link>/post/01-29-2019-usda-post/</link>
       <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/11/05/tidy-tuesday-avoiding-dual-axis-plots/</guid>
-      <description>Visualizing Two Variables of Interest The Prompt For my first #tidytuesday, I chose an old prompt. I wanted to explore USDA milk consumption data. The accompanying NPR article considers the oversupply of cheese in the US. Andrew Novakovic, an agricultural economist at Cornell University, explained that milk production has risen while consumption has fallen, so suppliers turn the milk into cheese which is less perishable. But Americans are turning to less processed/more expensive cheeses, and consuming cheese overall.</description>
+      <guid>/post/01-29-2019-usda-post/</guid>
+      <description>Visualizing Two Variables of Interest The Prompt For my first #tidytuesday, I chose an old prompt.</description>
     </item>
     
     <item>
       <title>AT Visualized</title>
-      <link>/2019/11/04/at-visualized/</link>
+      <link>/post/at_data_analysis/</link>
       <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/11/04/at-visualized/</guid>
-      <description>In 2019, I hiked northbound on the Appalachian Trail, 2,192 from Georgia to Maine. It took 170 days. After I finished, I went through my journal and guidebook to create a spreadsheet with each day’s mileage, location, sleep site, and other notes.
-Below, I visualize my mileage and attempt to find trends. I also breakdown my sleep sites by type.
-
-Clearly, my mileage was all over the place.</description>
+      <guid>/post/at_data_analysis/</guid>
+      <description>In 2019, I hiked northbound on the Appalachian Trail, 2,192 from Georgia to Maine.</description>
     </item>
     
   </channel>

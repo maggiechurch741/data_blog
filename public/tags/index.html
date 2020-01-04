@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>A Hugo website</title>
+  <title>Liva | Personal blog template</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A website built through Hugo and blogdown.">
+  <meta name="description" content="This is meta description">
   
+  <meta name="author" content="Maggie Church">
   <meta name="generator" content="Hugo 0.59.1" />
 
   <!-- plugins -->
+  
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="/plugins/venobox/venobox.css ">
   
 
   <!-- Main Stylesheet -->
@@ -21,13 +30,19 @@
   <link rel="shortcut icon" href="/images/favicon.png " type="image/x-icon">
   <link rel="icon" href="/images/favicon.png " type="image/x-icon">
 
-</head><body><!-- navigation -->
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
 <header class="navigation">
   <div class="container">
     
     <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom">
       <a class="navbar-brand mobile-view" href="/"><img class="img-fluid"
-          src="" alt="A Hugo website"></a>
+          src="/images/logo.png" alt="Liva | Personal blog template"></a>
       <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
         <i class="ti-menu h3"></i>
       </button>
@@ -36,37 +51,68 @@
         <div class="desktop-view">
           <ul class="navbar-nav mr-auto">
             
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="ti-facebook"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="ti-twitter-alt"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="ti-instagram"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="ti-github"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="ti-linkedin"></i></a>
+            </li>
+            
           </ul>
         </div>
 
         <a class="navbar-brand mx-auto desktop-view" href="/"><img class="img-fluid"
-            src="" alt="A Hugo website"></a>
+            src="/images/logo.png" alt="Liva | Personal blog template"></a>
 
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/"></a>
+            <a class="nav-link" href="/"> Home </a>
           </li>
           
           
           <li class="nav-item">
-            <a class="nav-link" href="/about/">About</a>
-          </li>
-          
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/rstudio/blogdown">GitHub</a>
+            <a class="nav-link" href="/about/about">About</a>
           </li>
           
           
           
           <li class="nav-item">
-            <a class="nav-link" href="https://twitter.com/rstudio">Twitter</a>
+            <a class="nav-link" href="/blog">Post</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
           </li>
           
           
         </ul>
 
+        
+        <!-- search -->
+        <div class="search px-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="//search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
         
 
         
@@ -105,6 +151,16 @@
           <h4 class="widget-title">Social</h4>
           <ul class="list-inline social-links">
             
+            <li class="list-inline-item"><a href="#"><i class="ti-facebook"></i></a></li>
+            
+            <li class="list-inline-item"><a href="#"><i class="ti-twitter-alt"></i></a></li>
+            
+            <li class="list-inline-item"><a href="#"><i class="ti-instagram"></i></a></li>
+            
+            <li class="list-inline-item"><a href="#"><i class="ti-github"></i></a></li>
+            
+            <li class="list-inline-item"><a href="#"><i class="ti-linkedin"></i></a></li>
+            
           </ul>
         </div>
         
@@ -131,22 +187,32 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center mb-5">
-        <a href="/"><img src="" alt="A Hugo website"></a>
+        <a href="/"><img src="/images/logo.png" alt="Liva | Personal blog template"></a>
       </div>
       <div class="col-lg-3 col-sm-6 mb-5">
         <h6 class="mb-4">Contact Me</h6>
         <ul class="list-unstyled">
-          <li class="mb-3"><a class="text-dark" href="tel:"><i
-                class="ti-mobile mr-3 text-primary"></i></a></li>
-          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i></li>
-          <li class="mb-3"><a class="text-dark" href="mailto:"><i
-                class="ti-email mr-3 text-primary"></i></a>
+          <li class="mb-3"><a class="text-dark" href="tel:0124857985320"><i
+                class="ti-mobile mr-3 text-primary"></i>0124857985320</a></li>
+          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Dhaka, Bangladedsh</li>
+          <li class="mb-3"><a class="text-dark" href="mailto:demo@email.com"><i
+                class="ti-email mr-3 text-primary"></i>demo@email.com</a>
           </li>
         </ul>
       </div>
       <div class="col-lg-3 col-sm-6 mb-5">
         <h6 class="mb-4">Social Contacts</h6>
         <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="#">facebook</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="#">twitter</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="#">instagram</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="#">github</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="#">linkedin</a></li>
           
         </ul>
       </div>
@@ -157,10 +223,16 @@
         <h6 class="mb-4">Quick Links</h6>
         <ul class="list-unstyled">
           
+          <li class="mb-3"><a class="text-dark" href="/about/about">About</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="/blog">Post</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="/contact">Contact</a></li>
+          
         </ul>
       </div>
       <div class="col-12 border-top py-4 text-center">
-        
+        | @2019 <a href="https://themefisher.com">Themefisher</a> All Rights Reserved |
       </div>
     </div>
   </div>
@@ -171,6 +243,20 @@
 </script>
 
 <!-- JS Plugins -->
+
+<script src="/plugins/jQuery/jquery.min.js"></script>
+
+<script src="/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="/plugins/slick/slick.min.js"></script>
+
+<script src="/plugins/venobox/venobox.min.js"></script>
+
+<script src="/plugins/search/fuse.min.js"></script>
+
+<script src="/plugins/search/mark.js"></script>
+
+<script src="/plugins/search/search.js"></script>
 
 <!-- Main Script -->
 
@@ -188,7 +274,7 @@
     a.src = g;
     m.parentNode.insertBefore(a, m)
   })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', '', 'auto');
+  ga('create', 'Your ID', 'auto');
   ga('send', 'pageview');
 </script></body>
 </html>
