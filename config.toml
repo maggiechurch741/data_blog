@@ -2,7 +2,7 @@
 # Site Settings
 
 baseURL = "https://www.datamaggie.com/"
-title = "Hugo Theme MemE"
+title = "Data Maggie"
 languageCode = "en-US"
 hasCJKLanguage = false
 # Copyright information (Markdown supported)
@@ -82,17 +82,12 @@ uglyURLs = false
 # Author’s information
 [author]
     # Name
-    name = "reuixiy"
-    # Email
-    email = "reuixiy@gmail.com"
-    # Motto or introduction
-    motto = "Viva La Vida"
+    name = "Maggie Church"
+    # Introduction
     # Avatar
     avatar = "/icons/apple-touch-icon.png"
-    # Personal website, default: baseURL
-    website = "https://io-oi.me/"
     # Twitter
-    twitter = "reuixiy"
+    twitter = "@datamaggie"
 
 # Related content
 [related]
@@ -174,32 +169,32 @@ uglyURLs = false
     ## Menu bar
     [[menu.main]]
         url = "/"
-        name = "Home"
+        name = "Posts"
         weight = 1
         pre = "internal"
         post = "home"
-    [[menu.main]]
-        url = "/posts/"
-        name = "Posts"
-        weight = 2
-        pre = "internal"
-        post = "archive"
-    [[menu.main]]
-        url = "/categories/"
-        name = "Categories"
-        weight = 3
-        pre = "internal"
-        post = "th"
-    [[menu.main]]
-        url = "/tags/"
-        name = "Tags"
-        weight = 4
-        pre = "internal"
-        post = "tags"
+    #[[menu.main]]
+    #    url = "/posts/"
+    #    name = "Posts"
+    #    weight = 2
+    #    pre = "internal"
+    #    post = "archive"
+    #[[menu.main]]
+      #  url = "/categories/"
+      #  name = "Categories"
+      #  weight = 3
+      #  pre = "internal"
+      #  post = "th"
+    #[[menu.main]]
+      #  url = "/tags/"
+      #  name = "Tags"
+      #  weight = 4
+      #  pre = "internal"
+      #  post = "tags"
     [[menu.main]]
         url = "/about/"
         name = "About"
-        weight = 5
+        weight = 2
         pre = "internal"
         post = "user-circle"
 
@@ -221,7 +216,7 @@ uglyURLs = false
     # Brand Bar (inside header)
 
     # Use SVG?
-    siteBrandSVG = true
+    siteBrandSVG = false
     # If true, put your SVG in the `SVG.toml`
     # file and configure the following options.
     # Unit: px
@@ -707,7 +702,7 @@ uglyURLs = false
     displayPublishedDate = true
     publishedDateIcon = "calendar-alt"
 
-    displayModifiedDate = true
+    displayModifiedDate = false
     modifiedDateIcon = "calendar-check"
 
     displayExpiredDate = true
@@ -1103,7 +1098,7 @@ uglyURLs = false
 
     # Leave it empty("") if you don’t want
     # the icon
-    iconBetweenYearAndAuthor = "heart"
+    iconBetweenYearAndAuthor = ""
     iconColor = "#f06292"
     # Enable heartbeat animation?
     iconAnimation = true

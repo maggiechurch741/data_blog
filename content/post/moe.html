@@ -8,57 +8,55 @@ tags: []
 
 
 
-<p>Recently, my friend Daniel Stublen made the argument that reporters should always include the margin of error when citing polls. This led to a discussion about what the margin of error really is. It was a good conversation, and I thought I’d share it with the world.</p>
+<p>Recently, my friend Daniel Stublen made the argument that reporters should always include the margin of error when citing polls. This led to a good discussion about what the margin of error really is, but I wanted to dive deeper into it, here.</p>
 <div id="margin-of-error" class="section level2">
 <h2>Margin of Error</h2>
-<p>The <strong>margin of error</strong> measures how confident you are that your poll accurately reflects the sentiments of all voters. The lower the margin, the more confident you can be that you accurately estimated the population.</p>
+<p>The margin of error measures how confident you are that your poll accurately reflects the sentiments of voters. The <strong>lower the margin</strong>, the <strong>more confident</strong> you can be in your estimation.</p>
 <div id="the-formula" class="section level3">
 <h3>The Formula</h3>
-<p>Between October 25-30, 2019, the New York Times Upshot/Siena College asked 439 Iowan, democratic, likely-caucus-participants: “Who is your first choice?” 22% responded with Elizabeth Warren.</p>
-<p>Using a 95% confidence interval, the margin of error is: <span class="math display">\[ z * SE \]</span> <span class="math display">\[ = 1.96 * \sqrt{\frac{(.5)(.5)}{439}} \]</span> <span class="math display">\[ = 4.7\% \]</span></p>
-<p>Let me break that down.</p>
+<p>Before I got into my thoughts on how margin of error should be reported, I want to review what margin of error really is (as painlessly as I can).</p>
+<p>So the <strong>formula</strong> for the margin of error is as follows: <span class="math display">\[ z * \sqrt{\frac{(p)(1-p)}{n}} \]</span></p>
+<p>To solve this, we really just need to know what n (sample size) is. That’s because there are some standard practices in the polling world, that turn the formula into this:</p>
+<p><span class="math display">\[ = 1.96 * \sqrt{\frac{(.5)(.5)}{n}} \]</span></p>
+<p>Why?</p>
 <ul>
-<li><p>The sample proportion <code>p(1-p)</code> = (.5)(.5): Okay, yeah we know that Warren got 22% in this poll, but we are going to ignore that and assume that her support level is a toss-up. 50-50 odds represents the upper bound of uncertainty, and yields the <a href="https://abcnews.go.com/PollingUnit/sampling-error-means/story?id=5984818">maximum margin of error</a>. Basically, we use 50-50 to be conservative in our estimation.</p></li>
-<li><p>Number of respondents <code>n</code> = 439: This what pollsters can really control. All else equal, more respondents will lower the margin of error. The tricky thing with polling is that you want your sample to be demographically representative of the voting population. Also, you want to capture likely voters, because only about <a href="https://fivethirtyeight.com/features/no-voter-turnout-wasnt-way-down-from-2012/">60% of elegible voters</a> actually do so.</p></li>
-<li><p>Confidence level indicator <code>z</code> = 1.96: The standard is 95% confidence, so z = 1.96. That’s because, assuming a normal distribution, 95% of all possibilities are within 1.96 standard deviations of the mean. You could use a larger confidence level, say 99%, but then your margin of error will be larger.</p></li>
+<li><p>The proportion of support p = .5: Pollsters will assume that any candidate’s chances are a toss-up (this, I just learned). 50-50 odds represents the upper bound of uncertainty, and yields the <a href="https://abcnews.go.com/PollingUnit/sampling-error-means/story?id=5984818">maximum margin of error</a>. Basically, they use 50-50 to be conservative in their estimation.</p></li>
+<li><p>Confidence level indicator z = 1.96: It’s conventional to use a 95% confidence level, so z = 1.96. Look up z scores if you want to understand why. You <em>could</em> use a larger confidence level, say 99%, but then your margin of error will be larger.</p></li>
+<li><p>Number of respondents n: This what pollsters can really control. All else equal, more respondents will lower the margin of error. The tricky thing with polling is that you want your sample to be demographically representative of the voting population. Also, you want to capture likely voters, because only about <a href="https://fivethirtyeight.com/features/no-voter-turnout-wasnt-way-down-from-2012/">60% of elegible voters</a> actually do so.</p></li>
 </ul>
-<p></br></p>
+<p>Let’s consider a real-world example. Between October 25-30, 2019, the New York Times Upshot/Siena College asked 439 Iowans “Who is your first choice?” and 22% responded with Elizabeth Warren.</p>
+<p><span class="math display">\[ 1.96 * \sqrt{\frac{(.5)(.5)}{439}} \]</span> <span class="math display">\[ = 4.7\% \]</span> </br></p>
 <p><img src="/post/moe_files/figure-html/unnamed-chunk-1-1.png" width="288" /></p>
-<p>So the interpretation of this poll is: “At least 95 out of 100 times, <span class="math inline">\(22 \% \pm 4.7\%\)</span> of Iowa’s caucus-going democrats’ will support Warren.” But keep in mind, 22% is still the most likely outcome, given our sample.</p>
+<p>So the interpretation of this poll is: “At least 95 out of 100 times, <span class="math inline">\(22 \% \pm 4.7\%\)</span> of Iowa’s democrats will support Warren.” But keep in mind, 22% is still the most likely outcome given our sample!</p>
 </div>
 <div id="how-to-report-the-horse-race" class="section level3">
 <h3>How to Report the Horse Race</h3>
 <p>Here are the full results of the poll:</p>
 <p><img src="/post/moe_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Here are three possible ways to report these results:</p>
+<p>“Warren is polling ahead of Klobuchar.”</p>
 <ul>
-<li><p>“Warren is polling ahead of Klobuchar” is totally okay to say, without caveats. The margin of error might actually be <em>most</em> useful to bring up when the difference in two candidates’ support is <em>outside</em> their margins (greater than a 9.2-point lead, in this case), because that means the lead is probably not due to sampling error.</p></li>
-<li><p>“Warren and Biden are in a statistical tie,” meaning, her lead on him is less than 9.2 points. I think this take is an exaggeration. I don’t think it’s misleading for a journalist to note that Warren is still <em>probably</em> ahead of Biden. In fact, it’s good information! Sure, they’re in a statistical tie, but that’s at a 95% confidence level. What if we use a 70% confidence level? Then our margin of error would be:</p></li>
+<li>I think this is totally okay to say, without caveats. Because the difference in the two candidates’ support is <em>greater</em> than their margins (greater than a 9.2-point lead, in this case), Warren’s lead is probably not due to sampling error.</li>
+</ul>
+<p>“Warren is polling ahead of Biden.”</p>
+<ul>
+<li>Eh, I think this is sketchy. Yes, Warren is polling ahead, but that lead could be due to sampling error.</li>
+</ul>
+<p>“Warren and Biden are in a statistical tie.”</p>
+<ul>
+<li>I think this take is an exaggeration. Sure, her lead on him is less than 9.2 points, but that number comes from the 95% confidence level. What if we use a 70% confidence level? Then, using the corresponding z-score, our margin of error would be…</li>
 </ul>
 <p><span class="math display">\[ 1.04 * \sqrt{\frac{(.5)(.5)}{439}} \]</span> <span class="math display">\[ = 2.5\% \]</span></p>
+<div style="white-space: pre-line;">       …and the graph would look more like this:</div>
 <p><img src="/post/moe_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>Cool, so Warren’s lead over Biden is significant with 70% confidence.</p>
+<div style="white-space: pre-line;">       Now, with 70% confidence, Warren’s lead over Biden is
+       significant.</div>
 </div>
-</div>
-<div id="why-do-pollsters-get-different-numbers" class="section level2">
-<h2>Why do pollsters get different numbers?</h2>
-<p>If different poll are reporting different numbers, and the difference is greater than the sum of their respective margins of error, this difference is probably not due to chance. The difference is probably structural, and has to do with <em>who</em> they sampled. Here are some of the more consequential differences in polling methods:</p>
-<p><strong>Polling method.</strong> Pollsters select respondents by either:</p>
-<ol style="list-style-type: decimal">
-<li>Calling a list of registered voters: This captures active voters, but doesn’t capture new voters and those that don’t have their number on their voter registration.</li>
-<li>Random digit dialing: This captures a larger universe, but it relies on respondents to be truthful about their registration status.</li>
-<li>Using online polls: This… is cheap. Phone response rates are <a href="https://www.pewresearch.org/fact-tank/2019/02/27/response-rates-in-telephone-surveys-have-resumed-their-decline/">pretty low these days</a> at 6%, which means more dialing and more money for phone surveys. Also, respondents are more likely to be truthful online, so this method avoids the (Bradley effect)[<a href="https://en.wikipedia.org/wiki/Bradley_effect" class="uri">https://en.wikipedia.org/wiki/Bradley_effect</a>]. However, being a nascent method, their <a href="https://www.nytimes.com/2019/07/02/upshot/online-polls-analyzing-reliability.html">accuracy is questionable</a>.</li>
-</ol>
-<p><strong>House effect.</strong> This is the systematic over-representation of Democratic or Republican respondents. Here are a couple of examples:</p>
-<ul>
-<li><p>The USC/L.A. Times polls for state races leaned democrat in 2010 because they used <a href="https://fivethirtyeight.com/features/when-house-effects-become-bias/">bilingual interviewers</a></p></li>
-<li><p>Many polls over-estimated Clinton’s support in 2016 because college graduates, who by 2016 were generally left of the aisle, are <a href="https://www.aapor.org/Education-Resources/Reports/An-Evaluation-of-2016-Election-Polls-in-the-U-S.aspx">more likely to take surveys</a></p></li>
-</ul>
-<p><strong>Weights.</strong> The above problems can theoretically be corrected by applying demographic weights, but this requires making assumptions that could be faulty.</p>
 </div>
 <div id="the-verdict" class="section level2">
 <h2>The Verdict</h2>
-<p>I agree with Daniel that it is wise for the media to mention margin of error, especially if the race is a close one. However, I don’t think journalists should go overboard and call a race a tie when it’s not.</p>
-<p>The Times/Sienna College poll that I’ve been using throughout this post was used in a <a href="https://www.nytimes.com/2019/11/01/us/politics/iowa-poll-warren-biden.html">Times piece</a> a couple of days after the poll was conducted. Here’s how they visualized the results:</p>
+<p>I agree with Daniel that it is wise for the media to mention margin of error, especially when the race is a close one.</p>
+<p>The Times/Sienna College poll that I’ve been using throughout this post was used in a <a href="https://www.nytimes.com/2019/11/01/us/politics/iowa-poll-warren-biden.html">nytimes piece</a> a couple of days after the poll was conducted. Here’s how they chose to visualize the results:</p>
 <div class="figure">
 <img src="https://i.imgur.com/ppEyQ9m.jpg" />
 
@@ -68,6 +66,22 @@ tags: []
 <img src="https://i.imgur.com/xaTQN9m.jpg" />
 
 </div>
-<p>Honestly, I don’t know the extent to which voters are mislead by an article like this, and I don’t know the extent to which polls effect voting behavior. Well, I do know that there can be a <a href="http://researchdmr.com/Why_Are_Polls_Self_Fulfilling_Prophecies">bandwagon effect</a> that makes poll results a bit self-fulfilling.</p>
+<p>Honestly, I don’t know the extent to which voters are mislead by an article like this, and I don’t know the extent to which polls effect voting behavior. Well, I do know that there can be a <a href="http://researchdmr.com/Why_Are_Polls_Self_Fulfilling_Prophecies">bandwagon effect</a> that makes poll results a bit self-fulfilling. But those questions are beasts of which I won’t take on here.</p>
 <p>The bottom line is: let’s all be data literate around election time, and remember what the margin of error means!</p>
+</div>
+<div id="why-do-pollsters-get-different-numbers" class="section level2">
+<h2>Why do pollsters get different numbers?</h2>
+<p>If different polls are reporting different results, and the difference is greater than the sum of their respective margins of error, this difference is probably not due to chance. The difference is probably structural, and has to do with <em>who</em> they sampled. Here are some of the more consequential variations in polling methods:</p>
+<p><strong>Polling method.</strong> Pollsters select respondents by either:</p>
+<ol style="list-style-type: decimal">
+<li>Calling a list of registered voters: This captures active voters, but leaves out people who don’t put their phone number on their voter registration, as well as the unregistered new voters.</li>
+<li>Random digit dialing: This captures a larger universe, but it relies on respondents to be truthful about their registration status.</li>
+<li>Using online polls: This… is cheap. Phone response rates are <a href="https://www.pewresearch.org/fact-tank/2019/02/27/response-rates-in-telephone-surveys-have-resumed-their-decline/">pretty low these days</a> at 6%, which means more dialing, which means surveys get costlier. Also, respondents are more likely to be truthful online, so this method avoids the <a href="https://en.wikipedia.org/wiki/Bradley_effect">Bradley effect</a>. However, being a nascent method, their <a href="https://www.nytimes.com/2019/07/02/upshot/online-polls-analyzing-reliability.html">accuracy is questionable</a>.</li>
+</ol>
+<p><strong>House effect.</strong> This is the systematic over-representation of Democratic or Republican respondents. Here are a couple of examples:</p>
+<ul>
+<li><p>The USC/L.A. Times polls for state races leaned democrat in 2010 because they used <a href="https://fivethirtyeight.com/features/when-house-effects-become-bias/">bilingual interviewers</a></p></li>
+<li><p>Many polls over-estimated Clinton’s support in 2016 because college graduates, who by 2016 were generally left of the aisle, are <a href="https://www.aapor.org/Education-Resources/Reports/An-Evaluation-of-2016-Election-Polls-in-the-U-S.aspx">more likely to take surveys</a></p></li>
+</ul>
+<p><strong>Weights.</strong> The above problems can theoretically be corrected by applying demographic weights, but this requires making assumptions that could be faulty.</p>
 </div>

@@ -1,6 +1,6 @@
 ---
-date: "2016-05-05T21:48:51-07:00"
 title: About
+date: '2020-01-04'
 ---
 
-This is a "hello world" example website for the [**blogdown**](https://github.com/rstudio/blogdown) package. The theme was forked from [@jrutheiser/hugo-lithium-theme](https://github.com/jrutheiser/hugo-lithium-theme) and modified by [Yihui Xie](https://github.com/yihui/hugo-lithium).
+Sometimes I want to answer a question. Sometimes I want to answer someone else's. This is a hub for my personal data projects and other miscellaneous endeavors.
