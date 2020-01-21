@@ -11,24 +11,12 @@ tags: []
 <p>Recently, my friend Daniel Stublen made the argument that reporters should always include the margin of error when citing polls. This led to a good discussion about what the margin of error really is, but I wanted to dive deeper into it, here.</p>
 <div id="margin-of-error" class="section level2">
 <h2>Margin of Error</h2>
-<p>Polls are bound to have sampling error (the error that occurs because you ask a subset of the population, rather than the entire population). The margin of error measures the maximum amount by which the sample results are expected to differ from those of the actual population. The <strong>lower the margin</strong>, the <strong>more confident</strong> you can be in your estimation.</p>
-<div id="the-formula" class="section level3">
-<h3>The Formula</h3>
-<p>Before I got into my thoughts on how margin of error should be reported, I want to review what margin of error really is (as painlessly as I can).</p>
-<p>So the formula for the margin of error is as follows: <span class="math display">\[ z * \sqrt{\frac{(p)(1-p)}{n}} \]</span></p>
-<p>To solve this, we really just need to know what n (sample size) is. That’s because there are some standard practices in the polling world, that turn the formula into this:</p>
-<p><span class="math display">\[ = 1.96 * \sqrt{\frac{(.5)(.5)}{n}} \]</span></p>
-<p>Why?</p>
-<ul>
-<li><p>The proportion of support p = .5: Pollsters will assume that any candidate’s chances are a toss-up (this, I just learned). 50-50 odds represents the upper bound of uncertainty, and yields the <a href="https://abcnews.go.com/PollingUnit/sampling-error-means/story?id=5984818">maximum margin of error</a>. Basically, they use 50-50 to be conservative in their estimation.</p></li>
-<li><p>Confidence level indicator z = 1.96: It’s conventional to use a 95% confidence level, so z = 1.96. Look up z scores if you want to understand why. You <em>could</em> use a larger confidence level, say 99%, but then your margin of error will be larger.</p></li>
-<li><p>Number of respondents n: This what pollsters can really control. All else equal, more respondents will lower the margin of error. The tricky thing with polling is that you want your sample to be demographically representative of the voting population. Also, you want to capture likely voters, because only about <a href="https://fivethirtyeight.com/features/no-voter-turnout-wasnt-way-down-from-2012/">60% of elegible voters</a> actually do so.</p></li>
-</ul>
-<p>Let’s consider a real-world example. Between October 25-30, 2019, the New York Times Upshot/Siena College asked 439 Iowans “Who is your first choice?” and 22% responded with Elizabeth Warren.</p>
-<p><span class="math display">\[ 1.96 * \sqrt{\frac{(.5)(.5)}{439}} \]</span> <span class="math display">\[ = 4.7\% \]</span> </br></p>
+<p>Polls are bound to have sampling error (the error that occurs because you ask a subset of the population, rather than the entire population). The margin of error measures the maximum amount by which the sample results are expected to differ from those of the actual population. The <em>lower the margin</em>, the <em>more confident</em> you can be in your estimation.</p>
+<p></br></p>
+<p>Let’s consider a real-world example. Between October 25-30, 2019, the New York Times Upshot/Siena College asked 439 Iowans “Who is your first choice?” and 22% responded with Elizabeth Warren. The margin of error on this was 4.7 percentage points.</p>
 <p><img src="/post/moe_files/figure-html/unnamed-chunk-1-1.png" width="288" /></p>
-<p>So the interpretation of this poll is: “At least 95 out of 100 times, <span class="math inline">\(22 \% \pm 4.7\%\)</span> of Iowa’s democrats will support Warren.” But keep in mind, 22% is still the most likely outcome given our sample!</p>
-</div>
+<p>So the interpretation of this poll is: “At least 95 out of 100 times, <span class="math inline">\(22 \% \pm 4.7\)</span> of Iowa’s democrats will support Warren.” But keep in mind, 22% is still the most likely outcome given our sample!</p>
+<p>I want to emphasize this. You can see from the graph that 22% isn’t likely to be correct. Technically, the probability of any <em>point</em> in a continuous distribution is 0%. We have no idea in which direction the true population support is actually in; there’s an equal chance that it’s above or below 22%.</p>
 <div id="how-to-report-the-horse-race" class="section level3">
 <h3>How to Report the Horse Race</h3>
 <p>Here are the full results of the poll:</p>
@@ -84,4 +72,17 @@ tags: []
 <li><p>Many polls over-estimated Clinton’s support in 2016 because college graduates, who by 2016 were generally left of the aisle, are <a href="https://www.aapor.org/Education-Resources/Reports/An-Evaluation-of-2016-Election-Polls-in-the-U-S.aspx">more likely to take surveys</a></p></li>
 </ul>
 <p><strong>Weights.</strong> The above problems can theoretically be corrected by applying demographic weights, but this requires making assumptions that could be faulty.</p>
+<div id="the-formula-if-you-care" class="section level3">
+<h3>The Formula (if you care)</h3>
+<p>Before I got into my thoughts on how margin of error should be reported, I want to review what margin of error really is (as painlessly as I can).</p>
+<p>So the formula for the margin of error is as follows: <span class="math display">\[ z * \sqrt{\frac{(p)(1-p)}{n}} \]</span></p>
+<p>To solve this, we really just need to know what n (sample size) is. That’s because there are some standard practices in the polling world, that turn the formula into this:</p>
+<p><span class="math display">\[ = 1.96 * \sqrt{\frac{(.5)(.5)}{n}} \]</span></p>
+<p>Why?</p>
+<ul>
+<li><p>The proportion of support p = .5: Pollsters will assume that any candidate’s chances are a toss-up (this, I just learned). 50-50 odds represents the upper bound of uncertainty, and yields the <a href="https://abcnews.go.com/PollingUnit/sampling-error-means/story?id=5984818">maximum margin of error</a>. Basically, they use 50-50 to be conservative in their estimation.</p></li>
+<li><p>Confidence level indicator z = 1.96: It’s conventional to use a 95% confidence level, so z = 1.96. Look up z scores if you want to understand why. You <em>could</em> use a larger confidence level, say 99%, but then your margin of error will be larger.</p></li>
+<li><p>Number of respondents n: This what pollsters can really control. All else equal, more respondents will lower the margin of error. The tricky thing with polling is that you want your sample to be demographically representative of the voting population. Also, you want to capture likely voters, because only about <a href="https://fivethirtyeight.com/features/no-voter-turnout-wasnt-way-down-from-2012/">60% of elegible voters</a> actually do so.</p></li>
+</ul>
+</div>
 </div>
